@@ -9,6 +9,8 @@ public class Item {
 	int reAmount;
 	double temp;
 	
+	//Testing Connection
+	
 	
 	public Item() {
 		
