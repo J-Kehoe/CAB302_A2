@@ -11,7 +11,6 @@ public class Store {
 	
 	private double capital = 100000;
 	private Stock inventory = new Stock();
-	inventory.items = Food;
 	private String name;
 	
 	private static final Store instance = new Store();
