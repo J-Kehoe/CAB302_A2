@@ -1,9 +1,16 @@
 package sMart;
 
+/**
+ * The Store class represents a store object. It contains Capital, Inventory and Name. 
+ * 
+ * @author Lara de Maroussem 
+ *
+ */
+
 public class Store {
 	
-	private double capital;
-	private double inventory;
+	private double capital = 100000;
+	private Stock inventory = new Stock();
 	private String name;
 	
 	private static final Store instance = new Store();
@@ -14,17 +21,20 @@ public class Store {
 		return instance;
 	}
 	
-	public void capital () {
+	public double capital (double capital) {
 		this.capital = capital;
+		return capital; 
 		
 	}
 	
-	public void inventory () {
-		
+	public Stock inventory (Stock inventory) {
+		this.inventory = inventory;
+		return inventory; 
 	}
 	
-	public void name () {
-		
+	public String name (String name) {
+		this.name = name;
+		return name; 
 	}
 
 }
