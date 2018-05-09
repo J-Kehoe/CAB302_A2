@@ -14,6 +14,7 @@ package sMart;
 
 public class Stock {
 	
-	
+	private int length;
+	private List<Item> items;
 	
 }
