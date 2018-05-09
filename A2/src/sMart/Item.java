@@ -9,7 +9,6 @@ public class Item {
 	int reAmount;
 	double temp; */
 	
-	// private Item testItem = new Item(name, mCost, sPrice, reorder, reAmount, temp);
 	
 	private Item (String name, double mCost, double sPrice, int reorder, int reAmount) {
 		
