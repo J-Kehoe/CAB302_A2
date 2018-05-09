@@ -1,5 +1,7 @@
 package sMart;
 
+import java.util.ArrayList;
+
 /**
  * The stock class is a collection of the object Item. The class contains functions representing store inventory, stock orders
  * sales log and truck cargo. 
