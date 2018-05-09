@@ -16,7 +16,7 @@ public class OrdinaryTruck extends Truck{
 		this.cost = cost;
 		
 		cost = 750 + (0.25 * variable);
-		
+	
 		return cost;
 	}
 	
