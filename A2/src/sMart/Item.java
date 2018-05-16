@@ -4,7 +4,7 @@ package sMart;
  * The Item class represents an item object. Containing name, manufacturing cost, sale price, re-order point, re-order amount
  * and in some cases item temperature. 
  * 
- * @author Lara de Maroussem 
+ * @author
  *
  */
 
