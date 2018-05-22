@@ -1,6 +1,7 @@
 package sMart;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * The stock class is a collection of the object Item. The class contains functions representing store inventory, stock orders
@@ -17,6 +18,33 @@ import java.util.ArrayList;
 public class Stock {
 	
 	private int length;
-	private List<Item> items;
+	private Item[] data;
+	private List<Item> datalist;
+	
+	
+	public Stock (Item[] input) {
+		this.data = input;
+		length = input.length;
+		for (int i = 0; i < length + 1; i++) {
+			datalist.add(input[i]);
+		}
+	}
+	
+	public int getLength () {
+		return length;
+	}
+	
+	public void addItem (Item entry) {
+		datalist.add(entry);
+	}
+	
+	public void formatStockCSV () {
+		
+	}
+	//private List<Item> items;
+	
+	
 	
 }
+
+
