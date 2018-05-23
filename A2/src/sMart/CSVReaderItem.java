@@ -21,7 +21,6 @@ public class CSVReaderItem {
 			}
 	
 	}
-	
 			private static List<Item> itemCSV(String fileName){
 				List<Item> items = new ArrayList<>();
 				Path pathToFile = Paths.get(fileName);
