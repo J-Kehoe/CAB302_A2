@@ -84,7 +84,5 @@ public class Item {
 	public void setReAmount(int reAmount) {
 		this.reAmount = reAmount;
 	}
-	
-	public String toString() { return "Item [name=" + name + ", price=" + mCost + ", author=" + sPrice + "]"; }
 
 }

@@ -17,7 +17,7 @@ public class CSVReaderItem {
 			List<Item> items = itemCSV("/Users/Lara/Documents/GitHub/CSV/item_properties.csv");
 			
 			for (Item b : items) { 
-				System.out.println(b);
+				System.out.println(asString(b));
 			}
 	
 	}
@@ -59,4 +59,10 @@ public class CSVReaderItem {
 				
 				return new Item(name, mCost, sPrice, reorder, reAmount, temp);
 			}
+			
+			public static String asString(Item entry) { 
+				return "Item [name=" + entry.name + ", manufacturing cost=" + entry.mCost + ", sale price=" + entry.sPrice + ", "
+						+ "reorder point=" + entry.reorder + ", reorder amount=" + entry.reAmount + ", temperature=" + entry.temp + "]"; 
+			}
+
 }
