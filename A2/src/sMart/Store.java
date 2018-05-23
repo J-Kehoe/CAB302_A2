@@ -9,8 +9,8 @@ package sMart;
 
 public class Store {
 	
-	private double capital = 100000;
-	private Stock inventory = new Stock();
+	private static double capital = 100000;
+	private Stock inventory;
 	//inventory.items = Food;
 	
 	private String name;
@@ -23,9 +23,8 @@ public class Store {
 		return instance;
 	}
 	
-	public double capital (double capital) {
-		this.capital = capital;
-		return capital; 
+	public static double getCapital () {
+		return capital;
 		
 	}
 	
