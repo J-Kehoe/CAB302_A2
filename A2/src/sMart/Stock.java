@@ -1,50 +1,43 @@
 package sMart;
 
-import java.util.ArrayList;
+import java.util.AbstractList;
 import java.util.List;
 
-/**
- * The stock class is a collection of the object Item. The class contains functions representing store inventory, stock orders
- * sales log and truck cargo. 
- * 
- * @author 
- *
- */
+public abstract class Stock extends AbstractList<Item> {
 
-/* Needs to be a collection of Item object */
-// Functions needed to represent store inventory (number of items in the hash map
-// Need to represent stock orders, sales log and truck cargo
+	private final Item[] a;
+	
+	public Stock(Item[] array) {
+		// TODO Auto-generated constructor stub
+		a = array;
+	}
 
-public class Stock {
+	@Override
+	public Item get(int index) {
+		return a[index];
+	}
 	
-	private int length;
-	private Item[] data;
-	private List<Item> datalist;
+	public Item set(int index, Item element) {
+		Item oldValue = a[index];
+		a[index] = element;
+		return oldValue;
+	}
+
+	@Override
+	public int size() {
+		// TODO Auto-generated method stub
+		return a.length;
+	}
 	
-	
-	public Stock (Item[] input) {
-		this.data = input;
-		length = input.length;
-		for (int i = 0; i < length + 1; i++) {
-			datalist.add(input[i]);
+	public static List<Item> asList(Item[] a) {
+		List<Item> asList = null;
+		for (int i = 0; i <= a.length - 1; i++) {
+			asList.add(a[i]);
 		}
-	}
-	
-	public int getLength () {
-		return length;
-	}
-	
-	public void addItem (Item entry) {
-		datalist.add(entry);
-	}
-	
-	public void formatStockCSV () {
 		
+		return asList;
 	}
-	//private List<Item> items;
-	
-	
-	
+
 }
 
 
