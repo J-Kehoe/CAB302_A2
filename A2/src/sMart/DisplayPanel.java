@@ -12,6 +12,13 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 
+/**
+ * Display panel contains capital and inventory controls. 
+ * 
+ * @author James Kehoe
+ *
+ */
+
 public class DisplayPanel extends JPanel {
 	public DisplayPanel() {
 		Dimension size = getPreferredSize();
@@ -30,7 +37,7 @@ public class DisplayPanel extends JPanel {
 		JLabel capitalLabel = new JLabel("Capital: ");
 		JButton tableButton = new JButton("Inventory");
 		JTextField capitalField = new JTextField(10);
-		capitalField.setText(df2.format(Store.getCapital()));
+		//capitalField.setText(df2.format(Store.getCapital()));
 		capitalField.setEditable(false);
 		
 		JTable inventoryTable = new JTable(testinput, columns);

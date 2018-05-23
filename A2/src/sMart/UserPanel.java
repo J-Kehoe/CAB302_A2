@@ -9,6 +9,13 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+/**
+ * User panel contains all the buttons and the labels on the right side of the GUI.
+ * 
+ * @author James Kehoe
+ *
+ */
+
 public class UserPanel extends JPanel {
 	public UserPanel() {
 		Dimension size = getPreferredSize();

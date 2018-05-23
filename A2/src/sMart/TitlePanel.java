@@ -8,6 +8,13 @@ import java.awt.GridBagLayout;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+/**
+ * Title panel is a class for the title of the GUI.
+ * 
+ * @author James Kehoe
+ *
+ */
+
 public class TitlePanel extends JPanel {
 	public TitlePanel() {
 		// Initialise Panel

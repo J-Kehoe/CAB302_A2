@@ -2,6 +2,14 @@ package sMart;
 
 import java.awt.Cursor;
 
+/**
+ * The GUI settings class controls the width, height, title, 
+ * visibility and runs the thread the GUI operates on.
+ * 
+ * @author James Kehoe
+ *
+ */
+
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 

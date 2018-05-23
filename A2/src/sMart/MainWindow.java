@@ -11,6 +11,14 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JTextArea;
 
+/**
+ * Main window is the main GUI class, this class groups all the GUI classes together and displays
+ * them as one GUI.
+ * 
+ * @author James Kehoe
+ *
+ */
+
 public class MainWindow extends JFrame {
 
 	private TitlePanel titlePanel;

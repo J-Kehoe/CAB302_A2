@@ -12,18 +12,25 @@ public abstract class Truck {
 	
 	double cost;
 	double cargoCapacity;
-	private List<Item> cargo;
+	boolean tempControlled;
+	private Item[] data; // Temporary
+	private Stock cargo = new Stock(data);
 	
-	public double calculateCost(double variable, double cost) {
+	private RefrigeratedTruck test = new RefrigeratedTruck();
+	private OrdinaryTruck test2 = new OrdinaryTruck();
+	
+	
+	public double calculateCost(double variable) {
 		return cost;
 	}
 	
-	public void cargoCapacity (double cargoCapacity) {
-
-	}
-	
 	public void cargo() {
-		//temp controlled items must be in refrigerated truck
+		if (tempControlled = true) {
+			
+			
+		} else if (tempControlled = false) {
+			
+		}
 	}
 
 }

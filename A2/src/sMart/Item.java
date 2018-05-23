@@ -16,6 +16,7 @@ public class Item {
 	int reorder;
 	int reAmount;
 	double temp; 
+	boolean tempControlled;
 
 /* Item object */
 	
@@ -30,14 +31,16 @@ public class Item {
 		
 	}
 
-/* Checks if item has a temperature, returns message or temperature */
+/* Checks if item has a temperature, sets a boolean value if item is temperature controlled */
 	
-	public double checkTemp() {
+	public void checkTemp() {
 		
 		if (temp == 0) {
-			System.out.println("Item does not have a temperature");
+			tempControlled = false;
 		}
-		return temp;
+		else {
+			tempControlled = true;
+		}
 	}
 	
 /* Get methods, returning item values */
@@ -46,20 +49,42 @@ public class Item {
 		return name;
 	}
 	
+	public void setName(String name) {
+		this.name = name;
+	}
+	
 	public double getMCost() {
 		return mCost;
+	}
+	
+	public void setMCost(double mCost) {
+		this.mCost = mCost;
 	}
 	
 	public double getSPrice() {
 		return sPrice;
 	}
 	
+	public void setSPrice(double sPrice) {
+		this.sPrice = sPrice;
+	}
+	
 	public int getReorder() {
 		return reorder;
+	}
+	
+	public void setReorder(int reorder) {
+		this.reorder = reorder;
 	}
 	
 	public int getReAmount() {
 		return reAmount;
 	}
+	
+	public void setReAmount(int reAmount) {
+		this.reAmount = reAmount;
+	}
+	
+	public String toString() { return "Item [name=" + name + ", price=" + mCost + ", author=" + sPrice + "]"; }
 
 }
