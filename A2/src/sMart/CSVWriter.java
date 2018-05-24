@@ -38,7 +38,7 @@ public class CSVWriter {
 	
 	public static void main(String[] args) throws IOException{
 		
-		String location = "/Users/Lara/Documents/newCSVFile.csv";
+		String location = "E:\\newManifest.csv";
 		generateCSVFile(location);
 		
 	}
