@@ -21,17 +21,22 @@ public class CSVReader {
 				System.out.println("File not read correctly.");
 			}
 			
-			//Sales
 			for (Object[] b : sales) { 
-				System.out.println(asString(b));
+				System.out.println(asString1(b));
 			}
 			
 			//Item
 			List<Item> items = itemCSV("/Users/Lara/Documents/GitHub/CSV/item_properties.csv");
 			
-			//item
 			for (Item b : items) { 
 				System.out.println(asString(b));
+			}
+			
+			//Manifest
+			List<Object [] []> manifest = manifestCSV("/Users/Lara/Documents/GitHub/CSV/manifest.csv");
+			
+			for (Object [] []  b : manifest) { 
+				System.out.println(asString1(b));
 			}
 	
 	}
@@ -72,8 +77,8 @@ public class CSVReader {
 		return nameAndNumber;
 	}
 			
-	public static String asString(Object[] entry) { 
-		return "Saleslog [name=" + entry[0] + ", number sold=" + entry[1] + "]";
+	public static String asString1(Object[] entry) { 
+		return "[" + entry[0] + "] [" + entry[1] + "]";
 	}
 			
 	private static List<Item> itemCSV(String fileName){
@@ -115,8 +120,54 @@ public class CSVReader {
 	}
 			
 	public static String asString(Item entry) { 
-		return "Item [name=" + entry.name + ", manufacturing cost=" + entry.mCost + ", sale price=" + entry.sPrice + ", "
-				+ "reorder point=" + entry.reorder + ", reorder amount=" + entry.reAmount + ", temperature=" + entry.temp + "]"; 
+		return "[" + entry.name + "] [" + entry.mCost + "] [" + entry.sPrice + "] ["
+				+ entry.reorder + "] [" + entry.reAmount + "] [" + entry.temp + "]"; 
+	}
+
+	//Manifest
+	private static List<Object[] []> manifestCSV(String fileName){
+		List<Object [] []> manifest = new ArrayList<>();
+		Path pathToFile = Paths.get(fileName);
+				
+			try (BufferedReader br = Files.newBufferedReader(pathToFile, StandardCharsets.US_ASCII)){
+						
+				String line = br.readLine();
+						
+				while (line != null) {
+							
+					String [] properties = line.split(",");
+							
+					Object [] [] manifests = createManifest(properties);
+							
+					manifest.add(manifests);
+							
+					line = br.readLine();
+				}
+
+			} catch (IOException ioe) {
+				
+				ioe.printStackTrace();
+			}
+					
+			return manifest;
+	}
+			
+	private static Object [] [] createManifest(String [] metadata) {
+				
+		String truck = metadata[0];
+		String name = metadata[1];
+		double order = Double.parseDouble(metadata[2]);
+				
+		Object[] [] manifesT = {
+					{truck} , 
+					{name, order}
+		};
+
+		return manifesT;
+	}
+			
+	public static String asString( Object [] [] entry) { 
+		return "Item [name=" + entry[0][0] + ", manufacturing cost=" + entry[1][0] + ", sale price=" + entry[2][0] + "]"; 
 	}
 
 }
