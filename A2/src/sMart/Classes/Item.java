@@ -16,12 +16,19 @@ public class Item {
 	double sPrice;
 	int reorder;
 	int reAmount;
-	double temp; 
+	String temp; 
 	boolean tempControlled;
 
-/* Item object */
+/*---------------------------------------------------------------*/	
 	
-	public Item (String name, int quantity, double mCost, double sPrice, int reorder, int reAmount, double temp) {
+	/**
+	   * Public Item creates an object Item.
+	   * @param String name, int quantity, double mCost, 
+	   * double sPrice, int reorder, int reAmount, String temp 
+	   * These parameters are the variables of the Item object.
+	   */
+	
+	public Item (String name, int quantity, double mCost, double sPrice, int reorder, int reAmount, String temp) {
 		
 		this.name = name;
 		this.quantity = quantity;
@@ -33,18 +40,19 @@ public class Item {
 		
 	}
 
-/* Checks if item has a temperature, sets a boolean value if item is temperature controlled */
+/*---------------------------------------------------------------*/	
 	
-	public void checkTemp() {
+	/**
+	   * This method checks if an item is refrigerated or ordinary.
+	   * @return Returns temperature value;
+	   */
+	
+	public String checkTemp() {
 		
-		if (temp == 0) {
-			tempControlled = false;
-		}
-		else {
-			tempControlled = true;
-		}
+		return temp;
 	}
-	
+
+/*---------------------------------------------------------------*/	
 /* Get methods, returning item values */
 	
 	public String getName() {
@@ -54,6 +62,18 @@ public class Item {
 	public void setName(String name) {
 		this.name = name;
 	}
+
+/*---------------------------------------------------------------*/	
+	
+	public int getQuantity() {
+		return quantity;
+	}
+	
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
+
+/*---------------------------------------------------------------*/	
 	
 	public double getMCost() {
 		return mCost;
@@ -62,6 +82,8 @@ public class Item {
 	public void setMCost(double mCost) {
 		this.mCost = mCost;
 	}
+
+/*---------------------------------------------------------------*/	
 	
 	public double getSPrice() {
 		return sPrice;
@@ -71,6 +93,7 @@ public class Item {
 		this.sPrice = sPrice;
 	}
 	
+/*---------------------------------------------------------------*/		
 	public int getReorder() {
 		return reorder;
 	}
@@ -79,6 +102,7 @@ public class Item {
 		this.reorder = reorder;
 	}
 	
+/*---------------------------------------------------------------*/	
 	public int getReAmount() {
 		return reAmount;
 	}
@@ -87,9 +111,14 @@ public class Item {
 		this.reAmount = reAmount;
 	}
 	
+/*---------------------------------------------------------------*/		
+	
 	public String toString() { 
-		return "Item [name=" + name + ", price=" + mCost + ", author=" + sPrice + "]"; 
+		return "Item [" + name + "] [" + quantity + "] [" + mCost + "] [" + sPrice + "] "
+				+ "[" + reorder + "] [" + reAmount + "] [" + temp + "]"; 
 	}
+
+/*---------------------------------------------------------------*/	
 	
 	public Object[] toArray() {
 		Object[] itemArray = {name, quantity, mCost, sPrice, reorder, reAmount, temp};

@@ -21,12 +21,10 @@ import org.junit.Test;
 
 public class StockTest {
 	
-/*---------------------------------------------------------------*/
-	
 	/* Initializing variables to be used in test cases */
 	
-	private Item test = new Item("Bread", 0, 2.0, 6.0, 1, 4, 2.0);
-	private Item test2 = new Item("Cheese", 0, 2.0, 6.0, 1, 4,-2.0);
+	private Item test = new Item("Bread", 0, 2.0, 6.0, 1, 4, "2.0");
+	private Item test2 = new Item("Cheese", 0, 2.0, 6.0, 1, 4,"-2.0");
 	
 	Item[] itemArray = new Item[2];
 	Stock itemStock = new Stock(itemArray);
@@ -59,7 +57,7 @@ public class StockTest {
 	
 	@Test
 	public void testSet() {
-		Item test1 = new Item("Grapes", 0, 2.0, 6.0, 1, 4,-2.0);
+		Item test1 = new Item("Grapes", 0, 2.0, 6.0, 1, 4, "-2.0");
 		Item test = itemArray[1];
 		itemArray[1] = test1;
 
