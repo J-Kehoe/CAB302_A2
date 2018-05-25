@@ -3,11 +3,14 @@ package sMart;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.List;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
+import javax.swing.event.EventListenerList;
 
 /**
  * User panel contains all the buttons and the labels on the right side of the GUI.
@@ -17,13 +20,29 @@ import javax.swing.JTextField;
  */
 
 public class UserPanel extends JPanel {
+	
+	private EventListenerList listenerList = new EventListenerList();
+	
 	public UserPanel() {
 		Dimension size = getPreferredSize();
 		size.width = 300;
 		setPreferredSize(size);
+		CSVReaderItem read = new CSVReaderItem();
 		
 		JLabel StepOneLabel = new JLabel("Step One: Initialise Item Properties");
 		JButton propertiesButton = new JButton("Import Properties");
+		
+		propertiesButton.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent e) {
+				CSVReaderItem propertiesData = new CSVReaderItem();
+				  
+				List<Item> p_list = propertiesData.itemCSV("C:/Users/jkkeh/OneDrive/Pictures/item_properties.csv");
+				Object[][] t_data_init = propertiesData.TableData(p_list);
+
+				fireUserEvent(new UserEvent(this, t_data_init));
+			}
+		});
 		
 		JLabel StepTwoLabel = new JLabel("Step Two: Export Manifest");
 		JButton exportButton = new JButton("Export Manifest");
@@ -99,6 +118,25 @@ public class UserPanel extends JPanel {
 		gc.gridx = 0;
 		gc.gridy = 8;
 		add(procedure, gc);
+	}	
+	
+	public void fireUserEvent(UserEvent event) {
+		Object[] listeners = listenerList.getListenerList();
 		
+		for (int i = 0; i < listeners.length; i += 2) {
+			if (listeners[i] == UserListener.class) {
+				((UserListener)listeners[i+1]).userEventHappened(event);
+			}
+		}
 	}
+	
+	public void addUserListener(UserListener listener) {
+		listenerList.add(UserListener.class, listener);
+	}
+	
+	public void removeUserListener(UserListener listener) {
+		listenerList.remove(UserListener.class, listener);		
+	}
+		
+	
 }

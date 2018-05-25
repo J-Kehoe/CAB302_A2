@@ -4,6 +4,7 @@ import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.text.DecimalFormat;
+import java.util.List;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -20,39 +21,33 @@ import javax.swing.JTextField;
  */
 
 public class DisplayPanel extends JPanel {
+	
+	CSVReaderItem propertiesData = new CSVReaderItem();
+	
+	private static final long serialVersionUID = 1L;
+	
+	
+	List<Item> p_list = propertiesData.itemCSV("C:/Users/jkkeh/OneDrive/Pictures/item_properties.csv");
+	Object[][] t_data_init = propertiesData.TableData(p_list);
+	
 	public DisplayPanel() {
 		Dimension size = getPreferredSize();
 		size.width = 900;
 		setPreferredSize(size);
-		String[] columns = {"Name", "Quantity", "Man. Cost", 
-				"Sell Price", "Reorder Point", "Reorder Amount", "Temp."};
-		Object[][] testinput = {
-				{"Test", "Test", "Test", "Test", "Test", "Test", "Test"},
-				{"Test", "Test", "Test", "Test", "Test", "Test", "Test"},
-				{"Test", "Test", "Test", "Test", "Test", "Test", "Test"},
-				{"Test", "Test", "Test", "Test", "Test", "Test", "Test"},
-		};
 		DecimalFormat df2 = new DecimalFormat(".##");
 		
 		JLabel capitalLabel = new JLabel("Capital: ");
-		JButton tableButton = new JButton("Inventory");
 		JTextField capitalField = new JTextField(10);
 		capitalField.setText(df2.format(Store.getCapital()));
 		capitalField.setEditable(false);
 		
-		JTable inventoryTable = new JTable(testinput, columns);
-		inventoryTable.setPreferredScrollableViewportSize(new Dimension(600, 300));
-		inventoryTable.setFillsViewportHeight(true);
-		inventoryTable.setEnabled(false);
-		
-		JScrollPane scrollPane = new JScrollPane(inventoryTable);
+		JScrollPane scrollPane = RefreshTable(t_data_init);
 		
 		setLayout(new GridBagLayout());
 		
 		GridBagConstraints gc = new GridBagConstraints();
 		
 		//// Top Row - Capital //////////////////////
-		
 		
 		gc.weightx = 0.5;
 		gc.weighty = 0.5;
@@ -78,6 +73,43 @@ public class DisplayPanel extends JPanel {
 		gc.fill = GridBagConstraints.BOTH;
 		add(scrollPane, gc);
 		
+		//// Add Listener for Updates ///////////////
+//		UserPanel.addUserListener(new UserListener() {
+//			public void userEventHappened(UserEvent event) {
+//				
+//			}
+//		});
+		
+	}
+	
+	public JScrollPane RefreshTable(Object[][] input) {
+		String[] columns = {"Name", "Quantity", "Man. Cost", 
+				"Sell Price", "Reorder Point", "Reorder Amount", "Temp."};
+		JTable inventoryTable = new JTable(input, columns);
+		inventoryTable.setPreferredScrollableViewportSize(new Dimension(600, 300));
+		inventoryTable.setFillsViewportHeight(true);
+		inventoryTable.setEnabled(false);
+		
+		JScrollPane scrollPane = new JScrollPane(inventoryTable);
+		
+		return scrollPane;
+	}
+	
+	public void setTableContents(Object[][] contents) {
+		Object[][] input = contents;
+		
+		/*JScrollPane newTable = RefreshTable(input);
+		
+		GridBagConstraints gc = new GridBagConstraints();
+		
+		gc.weighty = 10;
+		
+		gc.gridx = 0;
+		gc.gridy = 2;
+		gc.gridheight = 2;
+		gc.gridwidth = 2;
+		gc.fill = GridBagConstraints.BOTH;
+		add(newTable, gc);*/
 		
 	}
 }
