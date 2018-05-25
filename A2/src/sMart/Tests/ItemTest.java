@@ -7,7 +7,6 @@ import sMart.Classes.Item;
 
 public class ItemTest {
 	
-	private Item test2 = new Item("Cheese", 0, 2.0, 6.0, 1, 4, "-2.0");
 	
 	@Test
 	public void testTemp() {
@@ -17,7 +16,6 @@ public class ItemTest {
 		
 		assertEquals (temp, test.checkTemp());
 		assertEquals (temp, test2.checkTemp());
-		
 	}
 	
 }
