@@ -1,6 +1,7 @@
 package sMart.Classes;
 
 import java.util.AbstractList;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Stock extends AbstractList<Item> {
@@ -30,7 +31,7 @@ public class Stock extends AbstractList<Item> {
 	}
 	
 	public static List<Item> asList(Item[] a) {
-		List<Item> asList = null;
+		List<Item> asList = new ArrayList<>();
 		for (int i = 0; i <= a.length - 1; i++) {
 			asList.add(a[i]);
 		}
