@@ -11,6 +11,7 @@ package sMart;
 public class Item {
 	
 	String name;
+	int quantity;
 	double mCost;
 	double sPrice;
 	int reorder;
@@ -20,9 +21,10 @@ public class Item {
 
 /* Item object */
 	
-	public Item (String name, double mCost, double sPrice, int reorder, int reAmount, double temp) {
+	public Item (String name, int quantity, double mCost, double sPrice, int reorder, int reAmount, double temp) {
 		
-		this.name = name; 
+		this.name = name;
+		this.quantity = quantity;
 		this.mCost = mCost;
 		this.sPrice = sPrice;
 		this.reorder = reorder;
@@ -83,6 +85,15 @@ public class Item {
 	
 	public void setReAmount(int reAmount) {
 		this.reAmount = reAmount;
+	}
+	
+	public String toString() { 
+		return "Item [name=" + name + ", price=" + mCost + ", author=" + sPrice + "]"; 
+	}
+	
+	public Object[] toArray() {
+		Object[] itemArray = {name, quantity, mCost, sPrice, reorder, reAmount, temp};
+		return itemArray;
 	}
 
 }
