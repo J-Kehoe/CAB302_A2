@@ -1,4 +1,4 @@
-package sMart;
+package sMart.CSV;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -8,6 +8,8 @@ import java.nio.file.Path;
 import java.nio.file.Paths; 
 import java.util.ArrayList; 
 import java.util.List;
+
+import sMart.Classes.Item;
 
 public class CSVReaderItem {
 	
@@ -112,7 +114,7 @@ public class CSVReaderItem {
 	public static void main(String... args) {
 	
 	    //Get scanner instance
-		List<Item> items = itemCSV("C:/Users/jkkeh/OneDrive/Pictures/item_properties.csv");
+		List<Item> items = itemCSV("/Users/Lara/Documents/GitHub/CSV/sales_log_0.csv");
 		
 		/*for (int i = 0; i < 2; i++) {
 			for (int j = 0; j < 24; j++) {

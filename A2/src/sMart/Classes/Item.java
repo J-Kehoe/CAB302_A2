@@ -1,4 +1,4 @@
-package sMart;
+package sMart.Classes;
 
 /**
  * The Item class represents an item object. Containing name, manufacturing cost, sale price, re-order point, re-order amount

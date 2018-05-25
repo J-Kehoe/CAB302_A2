@@ -1,4 +1,5 @@
-package sMart;
+package sMart.Classes;
+
 import java.util.*;  
 
 /**
@@ -14,7 +15,7 @@ public abstract class Truck {
 	double cargoCapacity;
 	boolean tempControlled;
 	private Item[] data; // Temporary
-	private Stock cargo = new Stock(data);
+//	private Stock cargo = new Stock(data);
 	
 	private RefrigeratedTruck test = new RefrigeratedTruck();
 	private OrdinaryTruck test2 = new OrdinaryTruck();

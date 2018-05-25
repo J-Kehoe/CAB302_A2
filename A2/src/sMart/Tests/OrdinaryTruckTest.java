@@ -1,6 +1,8 @@
-package sMart;
+package sMart.Tests;
 import static org.junit.Assert.*;
 import org.junit.Test;
+
+import sMart.Classes.OrdinaryTruck;
 
 public class OrdinaryTruckTest {
 	

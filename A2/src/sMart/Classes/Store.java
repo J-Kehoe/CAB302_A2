@@ -1,4 +1,4 @@
-package sMart;
+package sMart.Classes;
 
 /**
  * The Store class represents a store object. It contains Capital, Inventory and Name. 

@@ -1,4 +1,4 @@
-package sMart;
+package sMart.Classes;
 
 /**
  * Refrigerated truck is an object which inherits from the abstract class Truck. It contains the properties of Truck, 

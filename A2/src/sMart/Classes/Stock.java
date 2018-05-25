@@ -1,10 +1,10 @@
-package sMart;
+package sMart.Classes;
 
 import java.util.AbstractList;
 import java.util.List;
 
-public abstract class Stock extends AbstractList<Item> {
-
+public class Stock extends AbstractList<Item> {
+	
 	private final Item[] a;
 	
 	public Stock(Item[] array) {

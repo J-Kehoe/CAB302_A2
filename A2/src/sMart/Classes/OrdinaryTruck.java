@@ -1,4 +1,4 @@
-package sMart;
+package sMart.Classes;
 
 
 /**

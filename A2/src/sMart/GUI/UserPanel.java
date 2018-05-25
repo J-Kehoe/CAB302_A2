@@ -1,4 +1,4 @@
-package sMart;
+package sMart.GUI;
 
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
@@ -11,6 +11,8 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.event.EventListenerList;
+
+import sMart.CSV.CSVReaderItem;
 
 /**
  * User panel contains all the buttons and the labels on the right side of the GUI.
@@ -37,7 +39,7 @@ public class UserPanel extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				CSVReaderItem propertiesData = new CSVReaderItem();
 				  
-				List<Item> p_list = propertiesData.itemCSV("C:/Users/jkkeh/OneDrive/Pictures/item_properties.csv");
+				List<Item> p_list = propertiesData.itemCSV("/Users/Lara/Documents/GitHub/CSV/sales_log_0.csv");
 				Object[][] t_data_init = propertiesData.TableData(p_list);
 
 				fireUserEvent(new UserEvent(this, t_data_init));

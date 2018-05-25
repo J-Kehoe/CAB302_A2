@@ -1,4 +1,4 @@
-package sMart;
+package sMart.GUI;
 
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
@@ -12,6 +12,9 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
+
+import sMart.CSV.CSVReaderItem;
+import sMart.Classes.Item;
 
 /**
  * Display panel contains capital and inventory controls. 
@@ -27,7 +30,7 @@ public class DisplayPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
 	
 	
-	List<Item> p_list = propertiesData.itemCSV("C:/Users/jkkeh/OneDrive/Pictures/item_properties.csv");
+	List<Item> p_list = propertiesData.itemCSV("/Users/Lara/Documents/GitHub/CSV/sales_log_0.csv");
 	Object[][] t_data_init = propertiesData.TableData(p_list);
 	
 	public DisplayPanel() {
