@@ -14,6 +14,7 @@ import javax.swing.JPanel;
 import javax.swing.event.EventListenerList;
 
 import sMart.CSV.CSVReaderItem;
+import sMart.Classes.Item;
 
 /**
  * User panel contains all the buttons and the labels on the right side of the GUI.

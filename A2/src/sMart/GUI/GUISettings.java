@@ -1,4 +1,4 @@
-package sMart;
+package sMart.GUI;
 
 import java.awt.Cursor;
 

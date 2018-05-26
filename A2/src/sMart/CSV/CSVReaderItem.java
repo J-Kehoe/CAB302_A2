@@ -10,6 +10,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import sMart.Classes.Item;
+import sMart.Classes.Stock;
+import sMart.Classes.Store;
 
 public class CSVReaderItem {
 	
@@ -41,7 +43,7 @@ public class CSVReaderItem {
 			inv[i] = properties.get(i);
 		}
 		Stock inv_stock = new Stock(inv);
-		Store.setInventory(inv_stock);
+		//Store.setInventory(inv_stock);
 		return properties;
 	}
 	

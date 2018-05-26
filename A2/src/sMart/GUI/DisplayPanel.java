@@ -1,4 +1,4 @@
-package sMart;
+package sMart.GUI;
 
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
@@ -12,6 +12,9 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
+
+import sMart.CSV.CSVReaderItem;
+import sMart.Classes.Store;
 
 /**
  * Display panel contains capital and inventory controls. 

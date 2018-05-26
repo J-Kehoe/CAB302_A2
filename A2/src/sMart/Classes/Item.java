@@ -47,9 +47,15 @@ public class Item {
 	   * @return Returns temperature value;
 	   */
 	
-	public String checkTemp() {
+	public Boolean checkTemp(String temp) {
+		this.temp = temp;
 		
-		return temp;
+		if (temp == " ") {
+			tempControlled = false;
+		} else {
+			tempControlled = true;
+		}
+		return tempControlled;
 	}
 
 /*---------------------------------------------------------------*/	
@@ -109,6 +115,16 @@ public class Item {
 	
 	public void setReAmount(int reAmount) {
 		this.reAmount = reAmount;
+	}
+	
+/*---------------------------------------------------------------*/	
+	
+	public String getTemp() {
+		return temp;
+	}
+	
+	public void setTemp(String temp) {
+		this.temp = temp;
 	}
 	
 /*---------------------------------------------------------------*/		

@@ -5,12 +5,9 @@ import sMart.Classes.Item;
 import sMart.Classes.Stock;
 
 import static org.junit.Assert.*;
-
-import java.util.AbstractList;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.junit.Test;
 
 /**
  * Test case for the class Stock. 
@@ -27,6 +24,7 @@ public class StockTest {
 	private Item test2 = new Item("Cheese", 0, 2.0, 6.0, 1, 4,"-2.0");
 	
 	Item[] itemArray = new Item[2];
+
 	Stock itemStock = new Stock(itemArray);
 	Item item;
 
