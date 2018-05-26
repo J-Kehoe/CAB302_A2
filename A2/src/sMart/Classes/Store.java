@@ -10,7 +10,7 @@ package sMart.Classes;
 public class Store {
 	
 	private static double capital = 100000;
-	private Stock inventory;
+	private static Stock inventory;
 	//inventory.items = Food;
 	
 	private String name;
@@ -36,6 +36,31 @@ public class Store {
 	public String name (String name) {
 		this.name = name;
 		return name; 
+	}
+	
+	public static String GenerateManifest() {
+		String manifest = "";
+		String r_string = "";
+		String o_string = "";
+		for (int i = 0; i < inventory.size(); i++) {
+			if (inventory.get(i).quantity < inventory.get(i).reorder) {
+				//if temp controlled add name and reorder amount to r_string
+				//else add name and reorder amount to o_string
+			}
+		}
+		manifest = ">Refrigerated,\n" + r_string + ",>Ordinary,\n" + o_string;
+		
+		return manifest;
+	}
+	
+	private void inputSales(Object[][] saleslog) {
+		//this will run after a saleslog is processed
+		//capital+ , inventory-
+	}
+	
+	private void UpdateCapitalAndInventory(int cost, Stock items) {
+		//This will run after a manifest is ordered
+		//capital- , inventory+
 	}
 
 }
