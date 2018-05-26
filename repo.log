@@ -1,0 +1,521 @@
+J-Kehoe (2):
+      Test Commit
+      test 3
+
+JKehoe97 (18):
+      Project Setup
+      edit to test
+      Testing Connection
+      Stock and Store additions
+      Sync
+      Class Diagram
+      GUI Files
+      Updated Stock
+      Updated Stock class
+      Capital Display in GUI
+      Fixed Table display
+      added ToArray to item
+      Finished Item Test
+      UserPanel updated w/ FileChooser
+      updated Stock
+      added manifest back to Classes folder
+      GUI Update
+      updated ReaderItem
+
+Lara (1):
+      Rearranging files
+
+Lara de Maroussem (22):
+      Start
+      start - fixed
+      test
+      item
+      new project file
+      scaffolding half complete
+      Comments
+      Merge branch 'master' of https://github.com/J-Kehoe/CAB302_A2
+      Java doc style comments
+      Truck and item
+      test
+      Test classes
+      CSV parser for Item added
+      CSV item updated
+      CSV reader Sales
+      CSVFormatException class
+      CSV writer class
+      CSVWriter class
+      Stock testing
+      Stock test case complete
+      CsvReader for itemfixed.
+      Merge ItemTest
+
+laradem123 (1):
+      test2.txt
+
+* 8610165 Rearranging files
+* c1ef2ad updated ReaderItem
+* db37826 GUI Update
+* 5b10211 added manifest back to Classes folder
+* b30a844 updated Stock
+* 79220e7 UserPanel updated w/ FileChooser
+*   42146e7 Merge ItemTest
+|\  
+| * 1548c80 Finished Item Test
+* | 583d14c CsvReader for itemfixed.
+|/  
+* cb9ac0b Stock test case complete
+* 036b144 Stock testing
+* 5c0c7f5 added ToArray to item
+* 6528611 Fixed Table display
+* feaa9f1 CSVWriter class
+* 9ca0cfa CSV writer class
+* 5f68436 CSVFormatException class
+* a98310a CSV reader Sales
+* de832b1 Capital Display in GUI
+* 127b854 CSV item updated
+* 6116c5e CSV parser for Item added
+* 24127f1 Updated Stock class
+* 2dd64e0 Updated Stock
+* d7186dc GUI Files
+* c7214b8 Class Diagram
+* a0b8e1d Sync
+* 90c143f Test classes
+* c433d65 test
+* 313e89d Truck and item
+* cb4d3fe Stock and Store additions
+* 98ea15e Java doc style comments
+*   e91dede Merge branch 'master' of https://github.com/J-Kehoe/CAB302_A2
+|\  
+| * 85db7de Testing Connection
+* | a08c497 Comments
+|/  
+* 6b3f351 scaffolding half complete
+* 451c2ef new project file
+* 6eecd37 item
+* ddf5818 edit to test
+* 0027ba2 test
+* 1770005 test 3
+* 077a710 Project Setup
+* ce1a422 test2.txt
+* 75de54c Test Commit
+* fa74408 start - fixed
+* ee3c79c Start
+commit 86101659581e70370949fc4e6bb799c27995d28f
+Author: Lara <laradem96@gmail.com>
+Date:   Sat May 26 22:15:55 2018 +1000
+
+    Rearranging files
+    
+    Adding folders and moving files.
+    Slight changes to the Item class, adding a boolean method.
+
+ 16 files changed, 146 insertions(+), 47 deletions(-)
+
+commit c1ef2adb18394723ebf4c5e57ad7c8d2eb6dddb7
+Author: JKehoe97 <jkkehoe177@gmail.com>
+Date:   Sat May 26 17:54:36 2018 +1000
+
+    updated ReaderItem
+
+ 1 file changed, 17 insertions(+), 3 deletions(-)
+
+commit db37826e6e552c523f869271a0449c869d7cd25e
+Author: JKehoe97 <jkkehoe177@gmail.com>
+Date:   Sat May 26 17:45:42 2018 +1000
+
+    GUI Update
+
+ 5 files changed, 79 insertions(+), 46 deletions(-)
+
+commit 5b10211897d72b5da165bf7f77911cbd326ba416
+Author: JKehoe97 <jkkehoe177@gmail.com>
+Date:   Sat May 26 17:42:35 2018 +1000
+
+    added manifest back to Classes folder
+
+ 1 file changed, 91 insertions(+)
+
+commit b30a8448bd4e55149d2eaa12a054a32f10b49060
+Author: JKehoe97 <jkkehoe177@gmail.com>
+Date:   Sat May 26 15:11:39 2018 +1000
+
+    updated Stock
+
+ 1 file changed, 26 insertions(+), 1 deletion(-)
+
+commit 79220e7b4e37766663afc94467a8448484a834bb
+Author: JKehoe97 <jkkehoe177@gmail.com>
+Date:   Sat May 26 14:43:26 2018 +1000
+
+    UserPanel updated w/ FileChooser
+
+ 1 file changed, 45 insertions(+), 5 deletions(-)
+
+commit 42146e78957c2636dec412ac39e10894f5921261
+Merge: 583d14c 1548c80
+Author: Lara de Maroussem <laradem96@gmail.com>
+Date:   Fri May 25 22:20:38 2018 +1000
+
+    Merge ItemTest
+    
+    ItemTest has been adjusted for small Item class changes.
+
+commit 583d14ca90066219aa4ba497c3f86da82714ecd1
+Author: Lara de Maroussem <laradem96@gmail.com>
+Date:   Fri May 25 22:18:56 2018 +1000
+
+    CsvReader for itemfixed.
+    
+    CSVItemReader now shows null if no temperture value is given.
+
+ 6 files changed, 260 insertions(+), 194 deletions(-)
+
+commit 1548c807c7024da54c3e657984767297193a0509
+Author: JKehoe97 <jkkehoe177@gmail.com>
+Date:   Fri May 25 16:47:49 2018 +1000
+
+    Finished Item Test
+
+ 1 file changed, 18 insertions(+), 1 deletion(-)
+
+commit cb9ac0bf72fe1f720323be69ecf0b2ca94d4a466
+Author: Lara de Maroussem <laradem96@gmail.com>
+Date:   Fri May 25 15:26:33 2018 +1000
+
+    Stock test case complete
+    
+    Stock test case completed, Java doc commenting also has been added. Slight change to the Stock class.
+
+ 2 files changed, 47 insertions(+), 2 deletions(-)
+
+commit 036b1442fcc7b391d464abe21a99aa3342042d88
+Author: Lara de Maroussem <laradem96@gmail.com>
+Date:   Fri May 25 14:56:34 2018 +1000
+
+    Stock testing
+    
+    Stock unit test almost complete.
+
+ 23 files changed, 98 insertions(+), 48 deletions(-)
+
+commit 5c0c7f577b7deb3c07063685c1e2451e95fce778
+Author: JKehoe97 <jkkehoe177@gmail.com>
+Date:   Fri May 25 12:37:02 2018 +1000
+
+    added ToArray to item
+
+ 1 file changed, 13 insertions(+), 2 deletions(-)
+
+commit 6528611cd28ed3b03fc732d479c5ca3469bcbddf
+Author: JKehoe97 <jkkehoe177@gmail.com>
+Date:   Fri May 25 12:35:23 2018 +1000
+
+    Fixed Table display
+
+ 3 files changed, 211 insertions(+), 18 deletions(-)
+
+commit feaa9f1014ed471f5950532b6604b702bbb8b27d
+Author: Lara de Maroussem <laradem96@gmail.com>
+Date:   Thu May 24 12:47:11 2018 +1000
+
+    CSVWriter class
+    
+    Change the location of the new csv file.
+
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 9ca0cfad97cf3b8f965722cd19ef2d62ac2b8c69
+Author: Lara de Maroussem <laradem96@gmail.com>
+Date:   Thu May 24 12:45:35 2018 +1000
+
+    CSV writer class
+    
+    CSV writer class has been created, slight modifications to CSVReader
+
+ 2 files changed, 103 insertions(+), 7 deletions(-)
+
+commit 5f684369d84d6245dd210721c707aa2c7dc25483
+Author: Lara de Maroussem <laradem96@gmail.com>
+Date:   Thu May 24 11:18:37 2018 +1000
+
+    CSVFormatException class
+    
+    One exception class created and implemented.
+
+ 4 files changed, 140 insertions(+), 134 deletions(-)
+
+commit a98310a2f7d07b3a953f26b75d811db825d9af10
+Author: Lara de Maroussem <laradem96@gmail.com>
+Date:   Wed May 23 16:11:26 2018 +1000
+
+    CSV reader Sales
+    
+    CSV reader sales created and class is working, Slight adjustment to CSV reader item
+
+ 2 files changed, 67 insertions(+), 1 deletion(-)
+
+commit de832b1aff78e414f9bf77e1ee36575848a39bf1
+Author: JKehoe97 <jkkehoe177@gmail.com>
+Date:   Wed May 23 14:34:24 2018 +1000
+
+    Capital Display in GUI
+    
+    Displays Capital in GUI
+
+ 2 files changed, 5 insertions(+), 6 deletions(-)
+
+commit 127b854e8d65961f68684e4cb2b4d2ec3da9b54b
+Author: Lara de Maroussem <laradem96@gmail.com>
+Date:   Wed May 23 14:13:56 2018 +1000
+
+    CSV item updated
+    
+    CSV item class and item class working
+
+ 2 files changed, 7 insertions(+), 3 deletions(-)
+
+commit 6116c5eb07340f42a6bb4512b7eb2139aae2c878
+Author: Lara de Maroussem <laradem96@gmail.com>
+Date:   Wed May 23 13:22:01 2018 +1000
+
+    CSV parser for Item added
+    
+    CSV class added, changes made to Item class also
+
+ 14 files changed, 184 insertions(+), 26 deletions(-)
+
+commit 24127f1239eabaef69b428a4d06fb8c8c12bbe54
+Author: JKehoe97 <jkkehoe177@gmail.com>
+Date:   Wed May 23 12:56:30 2018 +1000
+
+    Updated Stock class
+    
+    Updated Stock Class
+
+ 1 file changed, 27 insertions(+), 34 deletions(-)
+
+commit 2dd64e0398bd9cc725174e908d0932b0c27c6673
+Author: JKehoe97 <jkkehoe177@gmail.com>
+Date:   Tue May 22 14:42:26 2018 +1000
+
+    Updated Stock
+    
+    added methods to stock
+
+ 1 file changed, 29 insertions(+), 1 deletion(-)
+
+commit d7186dcd218da402ab09fc3e75b6b331432a78fa
+Author: JKehoe97 <jkkehoe177@gmail.com>
+Date:   Tue May 22 14:33:11 2018 +1000
+
+    GUI Files
+    
+    added Gui Classes
+
+ 5 files changed, 286 insertions(+)
+
+commit c7214b83df3e1c257aa2b13f9188686954143798
+Author: JKehoe97 <jkkehoe177@gmail.com>
+Date:   Wed May 16 14:18:12 2018 +1000
+
+    Class Diagram
+    
+    Uploaded Draft of Class Diagram
+
+ 1 file changed, 1 insertion(+)
+
+commit a0b8e1d2d9a6069e56f9ff7c707831ed0b3d8a6b
+Author: JKehoe97 <jkkehoe177@gmail.com>
+Date:   Wed May 16 11:56:47 2018 +1000
+
+    Sync
+    
+    syncing files
+
+ 8 files changed, 221 insertions(+), 1 deletion(-)
+
+commit 90c143fe302ef562c541745bcc6dd10da666c886
+Author: Lara de Maroussem <laradem96@gmail.com>
+Date:   Wed May 16 11:46:49 2018 +1000
+
+    Test classes
+    
+    Test class scafolding
+
+ 13 files changed, 48 insertions(+), 6 deletions(-)
+
+commit c433d659786cff9a44069eace980e4f95f87402f
+Author: Lara de Maroussem <laradem96@gmail.com>
+Date:   Wed May 9 14:09:43 2018 +1000
+
+    test
+    
+    test change
+
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 313e89d010d670158373b337f309670c7af49e8a
+Author: Lara de Maroussem <laradem96@gmail.com>
+Date:   Wed May 9 13:59:53 2018 +1000
+
+    Truck and item
+    
+    Truck, ordinary truck, refrigerated truck and item begining implementation.
+
+ 5 files changed, 90 insertions(+), 11 deletions(-)
+
+commit cb4d3fee677b5f915d31815b531c8820769c5d3c
+Author: JKehoe97 <jkkehoe177@gmail.com>
+Date:   Wed May 9 13:17:57 2018 +1000
+
+    Stock and Store additions
+    
+    Added private variables to Stock
+    Testing Stock properties in store
+
+ 2 files changed, 3 insertions(+), 1 deletion(-)
+
+commit 98ea15eaa1824d0627bd3f6a2e5df8c952bc536c
+Author: Lara de Maroussem <laradem96@gmail.com>
+Date:   Wed May 9 13:03:11 2018 +1000
+
+    Java doc style comments
+    
+    Further comments added
+
+ 7 files changed, 77 insertions(+), 12 deletions(-)
+
+commit e91dede5d31f404d8b87082b92c7ea85bef0c024
+Merge: a08c497 85db7de
+Author: Lara de Maroussem <laradem96@gmail.com>
+Date:   Wed May 9 12:18:31 2018 +1000
+
+    Merge branch 'master' of https://github.com/J-Kehoe/CAB302_A2
+
+commit a08c49793f827b01f163eede35edc76c417635c7
+Author: Lara de Maroussem <laradem96@gmail.com>
+Date:   Wed May 9 12:17:28 2018 +1000
+
+    Comments
+    
+    Added comments to Item, Stock and added code to Store.
+
+ 3 files changed, 37 insertions(+), 5 deletions(-)
+
+commit 85db7de42abd9b8f8d93b6e644df5454c27131c6
+Author: JKehoe97 <jkkehoe177@gmail.com>
+Date:   Wed May 9 12:16:28 2018 +1000
+
+    Testing Connection
+    
+    Testing Connection 9/05
+
+ 1 file changed, 2 insertions(+)
+
+commit 6b3f351ccd2ac23839962e8434232aa0bb47003b
+Author: Lara de Maroussem <laradem96@gmail.com>
+Date:   Wed May 2 16:21:59 2018 +1000
+
+    scaffolding half complete
+    
+    abstract class struck, manifest and store is not complete yet
+
+ 8 files changed, 55 insertions(+), 4 deletions(-)
+
+commit 451c2ef2205d3ef6bd19e086d397453b983cbb7a
+Author: Lara de Maroussem <laradem96@gmail.com>
+Date:   Wed May 2 16:09:45 2018 +1000
+
+    new project file
+
+ 9 files changed, 28 insertions(+), 8 deletions(-)
+
+commit 6eecd37c897c69e8fff257aa913a09a879461e0e
+Author: Lara de Maroussem <laradem96@gmail.com>
+Date:   Wed May 2 15:57:35 2018 +1000
+
+    item
+    
+    adding item class
+
+ 1 file changed, 4 insertions(+)
+
+commit ddf5818a7dc3517d57f477d54eb35df3297c3f48
+Author: JKehoe97 <jkkehoe177@gmail.com>
+Date:   Wed May 2 15:55:09 2018 +1000
+
+    edit to test
+    
+    bidfnsui
+
+ 1 file changed, 1 insertion(+)
+
+commit 0027ba2cc3134052965b00e69c45f733037e6385
+Author: Lara de Maroussem <laradem96@gmail.com>
+Date:   Wed May 2 15:53:52 2018 +1000
+
+    test
+    
+    again
+
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 177000510be367d556576e4d69b5b2ebbcaacd7f
+Author: J-Kehoe <jkkehoe177@gmail.com>
+Date:   Wed May 2 15:48:09 2018 +1000
+
+    test 3
+    
+    buisfu
+
+ 1 file changed, 1 insertion(+)
+
+commit 077a7107d63faf56145a9d1dd498dedb6bdc4dbb
+Author: JKehoe97 <jkkehoe177@gmail.com>
+Date:   Wed May 2 15:44:09 2018 +1000
+
+    Project Setup
+    
+    Setup project
+
+ 3 files changed, 24 insertions(+)
+
+commit ce1a422c5a7247967c1d63a7e49aabd6e84824f0
+Author: laradem123 <38902148+laradem123@users.noreply.github.com>
+Date:   Wed May 2 15:32:48 2018 +1000
+
+    test2.txt
+    
+    test
+
+ 1 file changed, 1 insertion(+)
+
+commit 75de54c812fbc0d9d5af7c277c8c399881e3df1e
+Author: J-Kehoe <jkkehoe177@gmail.com>
+Date:   Wed May 2 15:32:07 2018 +1000
+
+    Test Commit
+    
+    Testing commits from JK
+
+ 1 file changed, 1 insertion(+)
+
+commit fa74408efebe532e1a394377a056bf320cdd8cd7
+Author: Lara de Maroussem <laradem96@gmail.com>
+Date:   Wed May 2 15:26:26 2018 +1000
+
+    start - fixed
+    
+    spelling errors fixed
+
+ 18 files changed, 171 deletions(-)
+
+commit ee3c79cd93124fad7fce4b95ac9e60fbd81873f1
+Author: Lara de Maroussem <laradem96@gmail.com>
+Date:   Wed May 2 15:15:44 2018 +1000
+
+    Start
+    
+    classes with methods
+
+ 18 files changed, 171 insertions(+)
