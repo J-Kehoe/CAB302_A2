@@ -1,20 +1,17 @@
-package sMart.GUI;
+package sMart;
 
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.text.DecimalFormat;
-import java.util.List;
 
-import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
-
-import sMart.CSV.CSVReaderItem;
-import sMart.Classes.Item;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableColumn;
 
 /**
  * Display panel contains capital and inventory controls. 
@@ -28,10 +25,15 @@ public class DisplayPanel extends JPanel {
 	CSVReaderItem propertiesData = new CSVReaderItem();
 	
 	private static final long serialVersionUID = 1L;
+	String test = "test";
 	
-	
-	List<Item> p_list = propertiesData.itemCSV("/Users/Lara/Documents/GitHub/CSV/sales_log_0.csv");
-	Object[][] t_data_init = propertiesData.TableData(p_list);
+	//List<Item> p_list = propertiesData.itemCSV("C:/Users/jkkeh/OneDrive/Pictures/item_properties.csv");
+	//Object[][] t_data_init = propertiesData.TableData(p_list);
+	Object[][] testinput = new Object[0][0];
+	String[] columns = {"Name", "Quantity", "Man. Cost", 
+			"Sell Price", "Reorder Point", "Reorder Amount", "Temp."};
+	JTable inventoryTable = new JTable(new DefaultTableModel (testinput, columns));
+	JScrollPane scrollPane = new JScrollPane(inventoryTable);
 	
 	public DisplayPanel() {
 		Dimension size = getPreferredSize();
@@ -44,7 +46,12 @@ public class DisplayPanel extends JPanel {
 		capitalField.setText(df2.format(Store.getCapital()));
 		capitalField.setEditable(false);
 		
-		JScrollPane scrollPane = RefreshTable(t_data_init);
+		inventoryTable.setPreferredScrollableViewportSize(new Dimension(600, 300));
+		inventoryTable.setFillsViewportHeight(true);
+		inventoryTable.setEnabled(false);
+		inventoryTable.getModel();
+		
+
 		
 		setLayout(new GridBagLayout());
 		
@@ -85,34 +92,16 @@ public class DisplayPanel extends JPanel {
 		
 	}
 	
-	public JScrollPane RefreshTable(Object[][] input) {
-		String[] columns = {"Name", "Quantity", "Man. Cost", 
-				"Sell Price", "Reorder Point", "Reorder Amount", "Temp."};
-		JTable inventoryTable = new JTable(input, columns);
-		inventoryTable.setPreferredScrollableViewportSize(new Dimension(600, 300));
-		inventoryTable.setFillsViewportHeight(true);
-		inventoryTable.setEnabled(false);
-		
-		JScrollPane scrollPane = new JScrollPane(inventoryTable);
-		
-		return scrollPane;
-	}
-	
 	public void setTableContents(Object[][] contents) {
-		Object[][] input = contents;
-		
-		/*JScrollPane newTable = RefreshTable(input);
-		
-		GridBagConstraints gc = new GridBagConstraints();
-		
-		gc.weighty = 10;
-		
-		gc.gridx = 0;
-		gc.gridy = 2;
-		gc.gridheight = 2;
-		gc.gridwidth = 2;
-		gc.fill = GridBagConstraints.BOTH;
-		add(newTable, gc);*/
-		
+		DefaultTableModel model = (DefaultTableModel) inventoryTable.getModel();
+		int rows = model.getRowCount();
+		if (rows != 24) { 
+			for (int i = 0; i < contents.length; i++) {
+					model.addRow(contents[i]);
+			}
+		} else {
+			model.setDataVector(contents, columns);
+		}
+		//this.remove(inventoryTable);
 	}
 }

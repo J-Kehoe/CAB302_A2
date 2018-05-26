@@ -1,15 +1,21 @@
-package sMart.GUI;
+package sMart;
 
 import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.HeadlessException;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
-import javax.swing.BorderFactory;
-import javax.swing.JButton;
+import javax.swing.JFileChooser;
 import javax.swing.JFrame;
-import javax.swing.JTextArea;
+
+import javafx.stage.FileChooser;
+import javafx.stage.Window;
+
+import java.io.*;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+import javax.swing.SwingUtilities;
+import javax.swing.filechooser.*;
 
 /**
  * Main window is the main GUI class, this class groups all the GUI classes together and displays
@@ -21,9 +27,12 @@ import javax.swing.JTextArea;
 
 public class MainWindow extends JFrame {
 
+	private static final long serialVersionUID = 1L;
+	
 	private TitlePanel titlePanel;
 	private DisplayPanel displayPanel;
 	private UserPanel userPanel;
+	private FileChooser fc;
 	
 	
 	public MainWindow(String title) throws HeadlessException {
@@ -33,11 +42,20 @@ public class MainWindow extends JFrame {
 		setLayout(new BorderLayout());
 		
 		//Create Swing component
-		JTextArea capital = new JTextArea();
 		
 		displayPanel = new DisplayPanel();
 		titlePanel = new TitlePanel();
 		userPanel = new UserPanel();
+		fc = new FileChooser();
+		
+		// Add Listeners
+		userPanel.addUserListener(new UserListener() {
+			public void userEventHappened(UserEvent event) {
+				
+				Object[][] content = event.getTable();
+				displayPanel.setTableContents(content);
+			}
+		});
 		
 		// Add Swing components to pane
 		Container c = getContentPane();
