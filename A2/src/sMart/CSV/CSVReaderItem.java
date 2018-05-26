@@ -24,7 +24,7 @@ public class CSVReaderItem {
 			
 			
 			while (line != null) {
-				String[] upload = line.split(",");
+				String[] upload = line.split(",", -1);
 				Item myItem = CreateItem(upload);
 				
 				properties.add(myItem);
@@ -36,6 +36,12 @@ public class CSVReaderItem {
 		} catch (IOException ioe) {
 			ioe.printStackTrace();
 		} 
+		Item[] inv = new Item[properties.size()];
+		for (int i = 0; i < inv.length; i++) {
+			inv[i] = properties.get(i);
+		}
+		Stock inv_stock = new Stock(inv);
+		Store.setInventory(inv_stock);
 		return properties;
 	}
 	
@@ -60,9 +66,17 @@ public class CSVReaderItem {
 				asData[i][j] = dataArray[j];
 			}
 		}
+		
 		return asData;
 	}
 	
+///////////////////////////////////////////////////////////////////////
+	
+	/*public TableModel asTable(Object[][] table) {
+		TableModel model
+		return 
+	}
+	*/
 ///////////////////////////////////////////////////////////////////////
 	
 	private static Item CreateItem(String[] metadata) {
@@ -73,7 +87,7 @@ public class CSVReaderItem {
 		double sPrice = Double.parseDouble(metadata[2]);
 		int reorder = Integer.parseInt(metadata[3]);
 		int reAmount = Integer.parseInt(metadata[4]);
-		double temp = Double.parseDouble(metadata[5]);
+		String temp = metadata[5];
 		
 		Item itemVersion = new Item(name, quantity, mCost, sPrice, reorder, reAmount, temp);
 		
@@ -114,7 +128,7 @@ public class CSVReaderItem {
 	public static void main(String... args) {
 	
 	    //Get scanner instance
-		List<Item> items = itemCSV("/Users/Lara/Documents/GitHub/CSV/sales_log_0.csv");
+		//List<Item> items = itemCSV("C:/Users/jkkeh/OneDrive/Pictures/item_properties.csv");
 		
 		/*for (int i = 0; i < 2; i++) {
 			for (int j = 0; j < 24; j++) {
