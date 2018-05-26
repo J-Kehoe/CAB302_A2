@@ -11,9 +11,23 @@ public class Manifest {
 	
 	private Object[][] manifest;
 	
+/*---------------------------------------------------------------*/	
+	
+	/**
+	   * 
+	   * @param 
+	   */
+	
 	public Manifest (Object [][] manifest) {
 		this.manifest = manifest;
 	}
+	
+/*---------------------------------------------------------------*/	
+	
+	/**
+	   * 
+	   * @param 
+	   */
 	
 	public double AssignTrucks() {
 		//total is 
@@ -84,6 +98,13 @@ public class Manifest {
 		}
 		*/
 	}
+	
+/*---------------------------------------------------------------*/	
+	
+	/**
+	   * 
+	   * @param 
+	   */
 	
 	public void ExportManifest() {
 		

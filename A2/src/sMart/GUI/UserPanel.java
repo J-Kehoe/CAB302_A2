@@ -15,7 +15,7 @@ import javax.swing.JPanel;
 import javax.swing.event.EventListenerList;
 
 import sMart.CSV.CSVItemReader;
-import sMart.CSV.CSVReaderItem;
+
 import sMart.Classes.Item;
 import sMart.Exceptions.CSVFormatException;
 
@@ -34,7 +34,7 @@ public class UserPanel extends JPanel {
 		Dimension size = getPreferredSize();
 		size.width = 300;
 		setPreferredSize(size);
-		CSVReaderItem read = new CSVReaderItem();
+		CSVItemReader read = new CSVItemReader();
 		JFileChooser fc = new JFileChooser();
 		
 		JLabel StepOneLabel = new JLabel("Step One: Initialise Item Properties");

@@ -11,12 +11,25 @@ package sMart.Classes;
 public class OrdinaryTruck extends Truck{
 	
 	double quantity;
+
+/*---------------------------------------------------------------*/	
+	
+	/**
+	   * 
+	   * @param 
+	   */
 	
 	public OrdinaryTruck() {
 		this.cargoCapacity = 1000;
 		this.tempControlled = false;
 	}
+
+/*---------------------------------------------------------------*/	
 	
+	/**
+	   * 
+	   * @param 
+	   */
 	public double calculateCost(double variable) {
 		this.quantity = variable; 
 		

@@ -128,6 +128,10 @@ public class Item {
 	}
 	
 /*---------------------------------------------------------------*/		
+	/**
+	   * This method takes an Item object and displays it as a string.
+	   * @return Returns String value.
+	   */
 	
 	public String toString() { 
 		return "Item [" + name + "] [" + quantity + "] [" + mCost + "] [" + sPrice + "] "
@@ -135,6 +139,11 @@ public class Item {
 	}
 
 /*---------------------------------------------------------------*/	
+	
+	/**
+	   * This method takes an Item object and inputs it into an array.
+	   * @return Returns Array.
+	   */
 	
 	public Object[] toArray() {
 		Object[] itemArray = {name, quantity, mCost, sPrice, reorder, reAmount, temp};

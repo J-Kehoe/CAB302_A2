@@ -11,6 +11,7 @@ public class Store {
 	
 	private static double capital = 100000;
 	private static Stock inventory;
+	private static Stock cargo;
 	//inventory.items = Food;
 	
 	private String name;
@@ -31,6 +32,11 @@ public class Store {
 	public Stock inventory (Stock inventory) {
 		this.inventory = inventory;
 		return inventory; 
+	}
+	
+	public Stock cargo (Stock cargo) {
+		this.cargo = cargo;
+		return cargo; 
 	}
 	
 	public String name (String name) {

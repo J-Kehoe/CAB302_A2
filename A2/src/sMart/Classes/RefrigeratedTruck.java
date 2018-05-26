@@ -11,11 +11,25 @@ package sMart.Classes;
 public class RefrigeratedTruck extends Truck {
 
 	double temperature;
+
+/*---------------------------------------------------------------*/	
+	
+	/**
+	   * 
+	   * @param 
+	   */
 	
 	public RefrigeratedTruck() {
 		this.cargoCapacity = 800;
 		this.tempControlled = true;
 	}
+
+/*---------------------------------------------------------------*/	
+	
+	/**
+	   * 
+	   * @param 
+	   */
 	
 	public double calculateCost(double variable, double cost) {
 		this.temperature = variable; 
@@ -26,9 +40,38 @@ public class RefrigeratedTruck extends Truck {
 		return cost;
 	}
 	
+/*---------------------------------------------------------------*/	
+	
+	/**
+	   * 
+	   * @param 
+	   */
+	
+	public Stock cargo (Stock cargo) {
+		if (tempControlled = true) {
+			
+			
+		} else if (tempControlled = false) {
+			
+		}
+		return cargo;
+	}
+
+/*---------------------------------------------------------------*/	
+	
+	/**
+	   * 
+	   * @param 
+	   */
+	
 	public void temperature () {
 		//the temperature of the truck, must be the temp of the coldest item in cargo
 		// range from -20c to 10c
+		// Stock cargo = new Stock (Itemarray);
+		// for (int i = 0; i == itemarray[6]; i++) {
+		//	for (int j=0; j == i.itemarray.length(); j ++){
+		//		idealTemp = getminvalue(j);
+		// }
 	}
 	
 }

@@ -6,20 +6,33 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.io.IOException;
 
+/**
+ * 
+ * @author
+ *
+ */
 
 public class CSVWriter {
+	
+/*---------------------------------------------------------------*/	
+	
+	/**
+	   * 
+	   * @param 
+	   */
+	
 	
 	public static void generateCSVFile(String fileName) {
 		
 		FileWriter writer = null;
 		
 		try {
-				writer = new FileWriter(fileName);
-				writer.append("Truck"); //insert manifest.truck etc.
-	            	writer.append("\n");
-	            	writer.append("Item"); //insert manifest.item etc.
-	            	writer.append(",");
-	            	writer.append("Order"); //insert manifest.order etc.
+			writer = new FileWriter(fileName);
+			writer.append("Truck"); //insert manifest.truck etc.
+			writer.append("\n");
+	        writer.append("Item"); //insert manifest.item etc.
+	        writer.append(",");
+	        	writer.append("Order"); //insert manifest.order etc.
 	            	
 	            	//might need a for loop to iterate through all the items
 				
@@ -35,6 +48,12 @@ public class CSVWriter {
 			}
 	}
 
+/*---------------------------------------------------------------*/	
+	
+	/**
+	   * 
+	   * @param 
+	   */
 	
 	public static void main(String[] args) throws IOException{
 		

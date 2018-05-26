@@ -9,8 +9,6 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.swing.JOptionPane;
-
 import sMart.Classes.Item;
 import sMart.Classes.Stock;
 import sMart.Exceptions.CSVFormatException;
@@ -24,17 +22,6 @@ import sMart.Exceptions.CSVFormatException;
 
 public class CSVItemReader {
 	
-	/* Creating an Items list to input a file and creating an Item to test the CSV reader*/
-	
-	public static void main(String args[]) throws CSVFormatException{
-//
-//		List<Item> items = itemCSV("/Users/Lara/Documents/GitHub/CSV/item_properties.csv");
-//		
-//		for (Item b : items) { 
-//			System.out.println(asString(b));
-//		}
-}
-	
 /*---------------------------------------------------------------*/
 	
 	/**
@@ -47,9 +34,8 @@ public class CSVItemReader {
 
 	public static List<Item> itemCSV(String fileName){
 		
-		
 		Path pathToFile = Paths.get(fileName);
-		List<Item> items = new ArrayList<>();
+		List<Item> properties = new ArrayList<>();
 				
 		try (BufferedReader br = Files.newBufferedReader(pathToFile, StandardCharsets.US_ASCII)){
 			
@@ -57,10 +43,10 @@ public class CSVItemReader {
 				
 			while (line != null) {
 				
-				String [] properties = line.split(",", -1);	
+				String [] upload = line.split(",", -1);	
 				
-				Item item = createItem(properties);
-				items.add(item);
+				Item myItem = createItem(upload);
+				properties.add(myItem);
 				line = br.readLine();	
 				
 			}	
@@ -68,16 +54,24 @@ public class CSVItemReader {
 			e.printStackTrace();
 		}
 		
-		Item[] inv = new Item[items.size()];
+		Item[] inv = new Item[properties.size()];
 		for (int i = 0; i < inv.length; i++) {
-			inv[i] = items.get(i);
+			inv[i] = properties.get(i);
 		}
 		Stock inv_stock = new Stock(inv);
 		//Store.setInventory(inv_stock);
-		return items;
+		return properties;
 	}
 	
-/*---------------------------------------------------------------*/		
+/*---------------------------------------------------------------*/	
+	
+	/**
+	   * This method is creating a table array, therefore allowing the Item
+	   * object parsed from the CSV file to display in the GUI.
+	   * Array index.
+	   * @param List<Item> This is array list for Item.
+	   * @return Object [] [] The return is the multi dimensional table array.
+	   */
 	
 	public Object[][] TableData(List<Item> input) {
 		//Item[] inventory = new Item[6];
@@ -109,7 +103,8 @@ public class CSVItemReader {
 	   * index with the Item object parameters. 
 	   * @param String [] data This parameter is referencing the item created in the itemCSV class.
 	   * @return Item returns an Item object.
-	 * @throws CSVFormatException 
+	   * @throws CSVFormatException. An exception is thrown if the values are empty. The errors
+	   * are handled in the UserPanel GUI class.
 	   */
 	
 	private static Item createItem(String [] data) throws CSVFormatException {
@@ -122,35 +117,17 @@ public class CSVItemReader {
 		int reorder = Integer.parseInt(data[3]);
 		int reAmount = Integer.parseInt(data[4]);
 			
-			if (name.length() == 0) {
-				throw new CSVFormatException("Please include an item name.");
-			} 
-			if (reorder <= 0) {
-				throw new CSVFormatException("Please include an reorder point above 0.");
-			} 
-			if (reAmount <= 0 ) {
-				throw new CSVFormatException("Please include an reorder amount above 0.");
-			} else {
-				
-				Item itemVersion = new Item(name, quantity, mCost, sPrice, reorder, reAmount, temp);
-				
-				return itemVersion;
+		if (name.length() == 0) { throw new CSVFormatException("Please include an item name."); } 
 			
-			}
-	}
-	
-/*---------------------------------------------------------------*/	
-	
-	/**
-	   * This method takes the createItem method and converts it into a readable string format.
-	   * @param Item entry. This parameter uses the item class to get values. 
-	   * @return String. Returns object in a string format.
-	   */
-	
-	public static String asString(Item entry) { 
+		if (reorder <= 0) { throw new CSVFormatException("Please include an reorder point above 0."); } 
+			
+		if (reAmount <= 0 ) { throw new CSVFormatException("Please include an reorder amount above 0."); }
+			
+		else {
 		
-		return "[" + entry.getName() + "] [" + entry.getQuantity() + "] [" + entry.getMCost() + "] [" + entry.getSPrice() + "] ["
-				+ entry.getReorder() + "] [" + entry.getReAmount() + "] [" + entry.getTemp() + "]"; 
+			Item itemVersion = new Item(name, quantity, mCost, sPrice, reorder, reAmount, temp);
+				
+			return itemVersion;
+		}
 	}
-
 }

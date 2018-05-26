@@ -14,24 +14,43 @@ public abstract class Truck {
 	double cost;
 	double cargoCapacity;
 	boolean tempControlled;
-	private Item[] data; // Temporary
-//	private Stock cargo = new Stock(data);
+	private Item[] data;
+	private Stock stock = new Stock (data);
 	
 	private RefrigeratedTruck test = new RefrigeratedTruck();
 	private OrdinaryTruck test2 = new OrdinaryTruck();
+
+/*---------------------------------------------------------------*/	
 	
+	/**
+	   * 
+	   * @param 
+	   */
 	
 	public double calculateCost(double variable) {
 		return cost;
 	}
+
+/*---------------------------------------------------------------*/	
 	
-	public void cargo() {
+	/**
+	   * 
+	   * @param 
+	   */
+	
+	public Stock cargo (Stock cargo) {
+		
+		this.stock = cargo;
+		
+		Item temp = data[6];
+		
 		if (tempControlled = true) {
 			
 			
 		} else if (tempControlled = false) {
 			
 		}
+		return cargo;
 	}
 
 }
