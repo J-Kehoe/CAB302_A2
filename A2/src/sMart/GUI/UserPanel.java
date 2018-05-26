@@ -10,11 +10,14 @@ import java.util.List;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.event.EventListenerList;
 
+import sMart.CSV.CSVItemReader;
 import sMart.CSV.CSVReaderItem;
 import sMart.Classes.Item;
+import sMart.Exceptions.CSVFormatException;
 
 /**
  * User panel contains all the buttons and the labels on the right side of the GUI.
@@ -44,12 +47,18 @@ public class UserPanel extends JPanel {
 				fc.setCurrentDirectory(new java.io.File("."));
 				fc.setDialogTitle("Choose Properties File");
 				if (fc.showOpenDialog(propertiesButton) == JFileChooser.APPROVE_OPTION) {
-					CSVReaderItem propertiesData = new CSVReaderItem();
-					  
+					CSVItemReader propertiesData = new CSVItemReader();
+					try {  
 					List<Item> p_list = propertiesData.itemCSV(fc.getSelectedFile().getAbsolutePath());
 					Object[][] t_data_init = propertiesData.TableData(p_list);
 
 					fireUserEvent(new UserEvent(this, t_data_init));
+					
+					} catch (CSVFormatException error) {
+						JOptionPane.showMessageDialog (null, error.toString());
+					} catch (NumberFormatException nfe) {
+						JOptionPane.showMessageDialog (null, "Please check file, values are missing");
+					}
 				}
 				
 			}

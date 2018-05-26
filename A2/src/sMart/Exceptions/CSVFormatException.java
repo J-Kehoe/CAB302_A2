@@ -1,8 +1,7 @@
 package sMart.Exceptions;
 
-import java.io.IOException;
 
-public class CSVFormatException extends IOException {
+public class CSVFormatException extends IllegalArgumentException {
 	
 	CSVFormatException() { 
 	}
