@@ -19,6 +19,8 @@ import sMart.CSV.CSVItemReader;
 import sMart.Classes.Item;
 import sMart.Exceptions.CSVFormatException;
 
+
+
 /**
  * User panel contains all the buttons and the labels on the right side of the GUI.
  * 
@@ -34,7 +36,7 @@ public class UserPanel extends JPanel {
 		Dimension size = getPreferredSize();
 		size.width = 300;
 		setPreferredSize(size);
-		CSVItemReader read = new CSVItemReader();
+		//CSVReaderItem read = new CSVReaderItem();
 		JFileChooser fc = new JFileChooser();
 		
 		JLabel StepOneLabel = new JLabel("Step One: Initialise Item Properties");
@@ -46,9 +48,11 @@ public class UserPanel extends JPanel {
 				
 				fc.setCurrentDirectory(new java.io.File("."));
 				fc.setDialogTitle("Choose Properties File");
+				fc.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
 				if (fc.showOpenDialog(propertiesButton) == JFileChooser.APPROVE_OPTION) {
 					CSVItemReader propertiesData = new CSVItemReader();
-					try {  
+					
+					try {
 					List<Item> p_list = propertiesData.itemCSV(fc.getSelectedFile().getAbsolutePath());
 					Object[][] t_data_init = propertiesData.TableData(p_list);
 
@@ -71,12 +75,15 @@ public class UserPanel extends JPanel {
 			
 			public void actionPerformed(ActionEvent e) {
 				//Prompt filechooser
-				System.out.println("Export");
+				List<Item> manifest = Store.GenerateManifest();
+				CSVWriter writer = new CSVWriter();
+				
 				fc.setCurrentDirectory(new java.io.File("."));
 				fc.setDialogTitle("Choose Save Location");
 				fc.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-				if (fc.showSaveDialog(propertiesButton) == JFileChooser.APPROVE_OPTION) {
-					System.out.println("Export");
+				if (fc.showSaveDialog(exportButton) == JFileChooser.APPROVE_OPTION) {
+					//File is saved
+					writer.generateCSVFile(fc.getSelectedFile().getAbsolutePath() + "/manifest.csv", manifest);
 				}
 				
 				//String manifest = Store.GenerateManifest();
@@ -90,7 +97,29 @@ public class UserPanel extends JPanel {
 			
 			public void actionPerformed(ActionEvent e) {
 				//Prompt filechooser
-				System.out.println("Import");
+				fc.setCurrentDirectory(new java.io.File("."));
+				fc.setDialogTitle("Choose Manifest File");
+				fc.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
+				if (fc.showOpenDialog(importButton) == JFileChooser.APPROVE_OPTION) {
+					CSVManifestReader manifestReader = new CSVManifestReader();
+					
+					List<Object[]> man_array = CSVManifestReader.manCSV(fc.getSelectedFile().getAbsolutePath());
+					Object[][] man_table = manifestReader.TableData(man_array);
+					Stock man_as_stock = Store.ReadManifest(man_table);
+					Manifest man = new Manifest(man_as_stock);
+					//double cost = man.AssignTrucks();
+					double cost = 40000;
+					Store.setCapital(Store.getCapital() - cost);
+					
+					System.out.println(man_table);
+					
+					//fireUserEvent(new UserEvent(this, man_table));
+					//update capital on gui
+					
+					//update inventory where name = name
+					
+
+				}
 			}
 		});
 		
@@ -101,7 +130,15 @@ public class UserPanel extends JPanel {
 			
 			public void actionPerformed(ActionEvent e) {
 				//Prompt filechooser
-				System.out.println("Sales");
+				fc.setCurrentDirectory(new java.io.File("."));
+				fc.setDialogTitle("Choose Sales Log File");
+				fc.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
+				if (fc.showOpenDialog(salesButton) == JFileChooser.APPROVE_OPTION) {
+					CSVSaleslogReader salesData = new CSVSaleslogReader();
+					  
+					//List<Object[]> p_list = salesData.salesCSV(fc.getSelectedFile().getAbsolutePath());
+					//Object[] nameNumber = salesData.createSale(p_list.get(0));
+				}
 			}
 		});
 		
@@ -112,7 +149,6 @@ public class UserPanel extends JPanel {
 		GridBagConstraints gc = new GridBagConstraints();
 		
 		//// Add Labels and Buttons to Column //////////////////////
-		
 		
 		gc.weightx = 0.5;
 		gc.weighty = 0.5;
