@@ -1,4 +1,4 @@
-package sMart;
+package sMart.Classes;
 
 /**
  * Manifest is a collection of trucks

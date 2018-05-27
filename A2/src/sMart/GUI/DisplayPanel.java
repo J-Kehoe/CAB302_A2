@@ -25,7 +25,7 @@ import sMart.Classes.Store;
 
 public class DisplayPanel extends JPanel {
 	
-	CSVItemReader propertiesData = new CSVItemReader();
+	CSVReaderItem propertiesData = new CSVReaderItem();
 	
 	private static final long serialVersionUID = 1L;
 	String test = "test";
@@ -96,15 +96,32 @@ public class DisplayPanel extends JPanel {
 	}
 	
 	public void setTableContents(Object[][] contents) {
+		CSVReaderItem converter = new CSVReaderItem();
 		DefaultTableModel model = (DefaultTableModel) inventoryTable.getModel();
 		int rows = model.getRowCount();
 		if (rows != 24) { 
 			for (int i = 0; i < contents.length; i++) {
 					model.addRow(contents[i]);
 			}
+		UpdateInventory();	
 		} else {
-			model.setDataVector(contents, columns);
+			for (int i = 0; i < contents.length; i++) {
+				for (int j = 0; j < 24; j++) {
+					if (model.getValueAt(j, 0).equals(contents[i][0])) {
+						
+						model.setValueAt(contents[i][1], j, 1);
+					}
+				}
+			}
+			UpdateInventory();
 		}
 		//this.remove(inventoryTable);
+	}
+	
+	public void UpdateInventory() {
+		DefaultTableModel model = (DefaultTableModel) inventoryTable.getModel();
+		for (int i = 0; i < Store.getInventory().size(); i++) {
+			Store.getInventory().get(i).quantity = (int) model.getValueAt(i, 1);
+		}
 	}
 }

@@ -9,6 +9,8 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
+import sMart.Classes.Store;
+
 /**
  * The CSVSaleslogReader class takes a .csv file and converts it into an object. 
  * 
@@ -17,8 +19,8 @@ import java.util.List;
  */
  
 public class CSVSaleslogReader {
-
-    	public static void main(String... args) {
+	
+    public static void main(String... args) {
     		
     		/* Creating an Object list to input a file and creating an Object to test the CSV reader*/
 
@@ -40,7 +42,7 @@ public class CSVSaleslogReader {
     	   * @return List<Object> The return is of the new Object ArrayList.
     	   */
 	
-    	private static List<Object[]> salesCSV(String fileName){
+    	public static List<Object[]> salesCSV(String fileName){
     		
 		List<Object[]> sales = new ArrayList<>();
 		Path pathToFile = Paths.get(fileName);
@@ -70,14 +72,40 @@ public class CSVSaleslogReader {
   	   * @return Item returns an Item object.
   	   */
     	
-	private static Object[] createSale(String [] data) {
+	public static Object[] createSale(String [] data) {
 				
 		String name = data[0];
-		int numSold = Integer.parseInt(data[1]);
+		int numSold = 0;
+		
+		
+		for (int i = 0; i < Store.getInventory().size(); i++) {
+			if (Store.getInventory().get(i).name.equals(name)) {
+				numSold = Store.getInventory().get(i).quantity - Integer.parseInt(data[1]);
+			}
+		}
 		
 		Object[] nameAndNumber = {name, numSold};
 
 		return nameAndNumber;
+	}
+	
+/*---------------------------------------------------------------*/	
+
+	/**
+	   * This method takes the converted .csv file in the salesCSV method and creates an Object with
+	   * two indexes.
+	   * @param String [] data This parameter is referencing the object created in the salesCSV class.
+	   * @return Item returns an Item object.
+	   */
+	
+	public static Object[][] saleArray(List<Object[]> list) {
+		Object[][] array = new Object[list.size()][2];
+		for (int i = 0; i < list.size(); i++) {
+			for (int j = 0; j < 2; j++) {
+				array[i][j] = list.get(i)[j];
+			}
+		}
+		return array;
 	}
 	
 /*---------------------------------------------------------------*/	

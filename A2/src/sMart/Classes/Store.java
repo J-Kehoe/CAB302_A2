@@ -5,7 +5,7 @@ import java.util.List;
 
 import sMart.CSV.CSVWriter;
 import sMart.Classes.Item;
-import sMart.Classes.Stock;
+import sMart.Classes.Stock
 
 /**
  * The Store class represents a store object. It contains Capital, Inventory and Name. 
@@ -77,14 +77,33 @@ public class Store {
 		return man_stock;
 	}
 	
-	private void inputSales(Object[][] saleslog) {
-		//this will run after a saleslog is processed
-		//capital+ , inventory-
-	}
-	
-	private void UpdateCapitalAndInventory(int cost, Stock items) {
+	public static void UpdateInventory(Object[][] items, Boolean plusminus) {
 		//This will run after a manifest is ordered
 		//capital- , inventory+
+		for (int i = 0; i < items.length; i++) {
+			if (items[i][0].equals(inventory.get(i).name)) {
+				if (plusminus == true) {
+					inventory.get(i).quantity = inventory.get(i).quantity + (int)items[i][1];
+				} else {
+					inventory.get(i).quantity = inventory.get(i).quantity - (int)items[i][1];
+				}
+			}
+		}
+	}
+
+	public static Object[][] InventorytoArray() {
+		Object[][] inv_array = new Object[inventory.size()][7];
+		for (int i = 0; i < inventory.size(); i++) {
+			inv_array[i][0] = inventory.get(i).name;
+			inv_array[i][1] = inventory.get(i).quantity;
+			inv_array[i][2] = inventory.get(i).mCost;
+			inv_array[i][3] = inventory.get(i).sPrice;
+			inv_array[i][4] = inventory.get(i).reorder;
+			inv_array[i][5] = inventory.get(i).reAmount;
+			inv_array[i][6] = inventory.get(i).temp;
+		}
+		
+		return inv_array;
 	}
 
 }

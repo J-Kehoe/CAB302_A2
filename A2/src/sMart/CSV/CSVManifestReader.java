@@ -1,4 +1,4 @@
-package sMart;
+package sMart.CSV;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -8,6 +8,8 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+
+import sMart.Classes.Store;
 
 /**
  * The CSVManifestReader class takes a .csv file and converts it into an object. 
@@ -88,8 +90,12 @@ public class CSVManifestReader {
 		String name = data[0];
 		nameAndRestock[0] = name;
 		if (data.length > 1) {
-			int restockAmount = Integer.parseInt(data[1]);
-			nameAndRestock[1] = restockAmount;
+			for (int i = 0; i < Store.getInventory().size(); i++) {
+				if (Store.getInventory().get(i).name.equals(name)) {
+					int restockAmount = Store.getInventory().get(i).quantity + Integer.parseInt(data[1]);
+					nameAndRestock[1] = restockAmount;
+				}
+			}
 		} else {
 			nameAndRestock[1] = null;
 		}

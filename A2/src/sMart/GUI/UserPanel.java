@@ -19,8 +19,6 @@ import sMart.CSV.CSVItemReader;
 import sMart.Classes.Item;
 import sMart.Exceptions.CSVFormatException;
 
-
-
 /**
  * User panel contains all the buttons and the labels on the right side of the GUI.
  * 
@@ -50,7 +48,7 @@ public class UserPanel extends JPanel {
 				fc.setDialogTitle("Choose Properties File");
 				fc.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
 				if (fc.showOpenDialog(propertiesButton) == JFileChooser.APPROVE_OPTION) {
-					CSVItemReader propertiesData = new CSVItemReader();
+					CSVReaderItem propertiesData = new CSVReaderItem();
 					
 					try {
 					List<Item> p_list = propertiesData.itemCSV(fc.getSelectedFile().getAbsolutePath());
@@ -81,9 +79,19 @@ public class UserPanel extends JPanel {
 				fc.setCurrentDirectory(new java.io.File("."));
 				fc.setDialogTitle("Choose Save Location");
 				fc.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+				
+				if (fc.getSelectedFile().exists()) { 
+					  int result = JOptionPane.showConfirmDialog(fc, "Ensure You Select a Unique Filename When Saving", "New File Name", JOptionPane.OK_CANCEL_OPTION);
+					  fc.showSaveDialog(fc);
+					  /* return if user cancels */
+					  if(result == JOptionPane.CANCEL_OPTION) { 
+					    fc.cancelSelection();
+					    return;
+					  }
+				}
 				if (fc.showSaveDialog(exportButton) == JFileChooser.APPROVE_OPTION) {
 					//File is saved
-					writer.generateCSVFile(fc.getSelectedFile().getAbsolutePath() + "/manifest.csv", manifest);
+					writer.generateCSVFile(fc.getSelectedFile().getAbsolutePath() + ".csv", manifest);
 				}
 				
 				//String manifest = Store.GenerateManifest();
@@ -105,15 +113,17 @@ public class UserPanel extends JPanel {
 					
 					List<Object[]> man_array = CSVManifestReader.manCSV(fc.getSelectedFile().getAbsolutePath());
 					Object[][] man_table = manifestReader.TableData(man_array);
-					Stock man_as_stock = Store.ReadManifest(man_table);
-					Manifest man = new Manifest(man_as_stock);
+					//Stock man_as_stock = Store.ReadManifest(man_table);
+					//Store.UpdateInventory(man_table, true);
+					
+					//Manifest man = new Manifest(man_as_stock);
 					//double cost = man.AssignTrucks();
-					double cost = 40000;
-					Store.setCapital(Store.getCapital() - cost);
+					//double cost = 40000;
+					//Store.setCapital(Store.getCapital() - cost);
 					
-					System.out.println(man_table);
+					//System.out.println(man_table);
 					
-					//fireUserEvent(new UserEvent(this, man_table));
+					fireUserEvent(new UserEvent(this, man_table));
 					//update capital on gui
 					
 					//update inventory where name = name
@@ -135,6 +145,10 @@ public class UserPanel extends JPanel {
 				fc.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
 				if (fc.showOpenDialog(salesButton) == JFileChooser.APPROVE_OPTION) {
 					CSVSaleslogReader salesData = new CSVSaleslogReader();
+					List<Object[]> sales = salesData.salesCSV(fc.getSelectedFile().getAbsolutePath());
+					Object[][] salesArray = salesData.saleArray(sales);
+					
+					fireUserEvent(new UserEvent(this, salesArray));
 					  
 					//List<Object[]> p_list = salesData.salesCSV(fc.getSelectedFile().getAbsolutePath());
 					//Object[] nameNumber = salesData.createSale(p_list.get(0));
