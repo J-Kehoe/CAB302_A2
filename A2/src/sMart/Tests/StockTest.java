@@ -18,7 +18,7 @@ import java.util.List;
 
 public class StockTest {
 	
-	/* Initializing variables to be used in test cases */
+	/* Creating variables to be used in test cases */
 	
 	private Item test = new Item("Bread", 0, 2.0, 6.0, 1, 4, "2.0");
 	private Item test2 = new Item("Cheese", 0, 2.0, 6.0, 1, 4,"-2.0");

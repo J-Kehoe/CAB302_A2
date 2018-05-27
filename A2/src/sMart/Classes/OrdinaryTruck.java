@@ -11,8 +11,6 @@ import java.util.List;
  */
 
 public class OrdinaryTruck extends Truck{
-	
-	List<Item> cargo = new ArrayList<>();
 
 /*---------------------------------------------------------------*/	
 	
@@ -22,7 +20,7 @@ public class OrdinaryTruck extends Truck{
 	   */
 	
 	public OrdinaryTruck(List<Item> cargo) {
-		this.cargo = cargo;
+
 	}
 
 /*---------------------------------------------------------------*/	
@@ -34,10 +32,11 @@ public class OrdinaryTruck extends Truck{
 	   * @return cost. Returns cost of OrdinaryTruck.
 	   */
 	
-	public double calculateCost(double variable) {
-		variable = cargo.size();
+	public double calculateCost(List<Item> cargo) {
+
+		double quantity = cargo.size();
 		
-		cost = 750 + (0.25 * variable);
+		cost = 750 + (0.25 * quantity);
 	
 		return cost;
 	}
@@ -56,7 +55,7 @@ public class OrdinaryTruck extends Truck{
 		List<Item> cargo = new ArrayList <Item> ();
 		String temp = a.getTemp();
 			
-			if (a.checkTemp(temp) == false) {
+			if (a.checkTemp(temp) == false ) {
 				cargo.add(a);
 			}
 		
@@ -74,10 +73,10 @@ public class OrdinaryTruck extends Truck{
 	   */
 	
 	public Boolean checkFull (List<Item> cargo) {
-		Boolean checkFull = null;
+		boolean checkFull;
 		double cargoCapacity = 1000;
 		
-		if (cargo.size() > cargoCapacity) {
+		if (cargo.size() < cargoCapacity) {
 			checkFull = true;
 		} else {
 			checkFull = false;
