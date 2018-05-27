@@ -1,41 +1,46 @@
 package sMart.Classes;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Refrigerated truck is an object which inherits from the abstract class Truck. It contains the properties of Truck, 
  * with the addition of the property temperature.
  * 
- * @author
+ * @author Lara de Maroussem
  *
  */
 
 public class RefrigeratedTruck extends Truck {
 
-	double temperature;
+	String temperature;
+	Item a;
+	double cargoCapacity = 800;
 
 /*---------------------------------------------------------------*/	
 	
 	/**
-	   * 
-	   * @param 
+	   * The RefrigeratedTruck object.
+	   * @param List<Items> cargo. The cargo of RefrigeratedTruck. 
 	   */
 	
-	public RefrigeratedTruck() {
-		this.cargoCapacity = 800;
-		this.tempControlled = true;
-	}
+	public RefrigeratedTruck(List<Item> cargo) {}
 
 /*---------------------------------------------------------------*/	
 	
 	/**
-	   * 
-	   * @param 
+	   * Inherited from Truck, this method calculates the cost of 
+	   * a RefrigeratedTruck based on the variable cargo quantity.
+	   * @param double variable. Checks cost based on cargo quantity.
+	   * @return cost. Returns cost of RefrigeratedTruck.
 	   */
 	
 	public double calculateCost(double variable, double cost) {
-		this.temperature = variable; 
+		temperature = a.getTemp();
+		variable = Double.parseDouble(temperature);
 		this.cost = cost;
 		
-		cost = 900 + (200 * (java.lang.Math.pow(0.7,(temperature/5))));
+		cost = 900 + (200 * (java.lang.Math.pow(0.7,(variable/5))));
 		
 		return cost;
 	}
@@ -43,35 +48,44 @@ public class RefrigeratedTruck extends Truck {
 /*---------------------------------------------------------------*/	
 	
 	/**
-	   * 
-	   * @param 
+	   * Inherited from Truck, this method adds an Item to 
+	   * RefrigeratedTruck cargo if item is not temperature controlled.
+	   * @param Item a. Method uses getTemp() and checkTemp() from
+	   * the Item class to check if item a is temperature controlled. 
+	   * @return Cargo. 
 	   */
 	
-	public Stock cargo (Stock cargo) {
-		if (tempControlled = true) {
+	public List<Item> addCargo (Item a) {
+		List<Item> cargo = new ArrayList <Item> ();
+		String temp = a.getTemp();
 			
-			
-		} else if (tempControlled = false) {
-			
-		}
+			if (a.checkTemp(temp) == true) {
+				cargo.add(a);
+			}
+		
 		return cargo;
 	}
 
 /*---------------------------------------------------------------*/	
 	
 	/**
-	   * 
-	   * @param 
+	   * Inherited from Truck, this method returns a boolean value to
+	   * check if RefrigeratedTruck is full. OrdinaryTruck's capacity 
+	   * is 1000.
+	   * @param List<Item> cargo. OrdinaryTruck's cargo.
+	   * @return checkFull. Return boolean checkFull value.
 	   */
 	
-	public void temperature () {
-		//the temperature of the truck, must be the temp of the coldest item in cargo
-		// range from -20c to 10c
-		// Stock cargo = new Stock (Itemarray);
-		// for (int i = 0; i == itemarray[6]; i++) {
-		//	for (int j=0; j == i.itemarray.length(); j ++){
-		//		idealTemp = getminvalue(j);
-		// }
+	public Boolean checkFull (List<Item> cargo) {
+		Boolean checkFull = null;
+		
+		if (cargo.size() > cargoCapacity) {
+			checkFull = true;
+		} else {
+			checkFull = false;
+		}
+		
+		return checkFull;
 	}
 	
 }
