@@ -25,7 +25,7 @@ public abstract class Truck {
 	   * @return cost.
 	   */
 	
-	public double calculateCost(double variable) {
+	public double calculateCost() {
 		return cost;
 	}
 

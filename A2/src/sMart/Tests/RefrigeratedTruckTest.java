@@ -7,11 +7,10 @@ import java.util.List;
 import org.junit.Test;
 
 import sMart.Classes.Item;
-import sMart.Classes.OrdinaryTruck;
 import sMart.Classes.RefrigeratedTruck;
 
 /**
- * Test case for the class Stock. 
+ * Test case for the class RefridgeratedTruck. 
  * 
  * @author James Kehoe
  *
@@ -98,7 +97,7 @@ public class RefrigeratedTruckTest {
 	
 	/**
 	   * This method is used to test the checkFull() function in the  
-	   * OrdinaryTruck class. In the OrdinaryTruck class this method 
+	   * RefrigeratedTruck class. In the RefrigeratedTruck class this method 
 	   * is of type boolean, with a parameter of List<item> cargo and 
 	   * a return value of a boolean. This test checks for a false
 	   * boolean value; if the size of List<item> cargo doesn't reach 

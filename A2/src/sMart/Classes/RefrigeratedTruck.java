@@ -13,10 +13,6 @@ import java.util.List;
 
 public class RefrigeratedTruck extends Truck {
 
-	String temperature;
-	Item a;
-	double cargoCapacity = 800;
-
 /*---------------------------------------------------------------*/	
 	
 	/**
@@ -35,12 +31,11 @@ public class RefrigeratedTruck extends Truck {
 	   * @return cost. Returns cost of RefrigeratedTruck.
 	   */
 	
-	public double calculateCost(double variable, double cost) {
-		temperature = a.getTemp();
-		variable = Double.parseDouble(temperature);
-		this.cost = cost;
+	public double calculateCost(Item a) {
+		String temperature = a.getTemp();
+		double temp = Double.parseDouble(temperature);
 		
-		cost = 900 + (200 * (java.lang.Math.pow(0.7,(variable/5))));
+		cost = 900 + (200 * (java.lang.Math.pow(0.7,(temp/5))));
 		
 		return cost;
 	}
@@ -78,6 +73,7 @@ public class RefrigeratedTruck extends Truck {
 	
 	public Boolean checkFull (List<Item> cargo) {
 		Boolean checkFull = null;
+		cargoCapacity = 800;
 		
 		if (cargo.size() > cargoCapacity) {
 			checkFull = true;

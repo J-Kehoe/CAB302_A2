@@ -10,7 +10,7 @@ import sMart.Classes.Item;
 import sMart.Classes.OrdinaryTruck;
 
 /**
- * Test case for the class Stock. 
+ * Test case for the class OrdinaryTruck. 
  * 
  * @author James Kehoe
  *
@@ -79,11 +79,11 @@ public class OrdinaryTruckTest {
 		double cargoCap = 1000;
 		boolean check;
 		
-		while (testList.size() <= 1001) {
+		while (testList.size() >= 1001) {
 			testList.add(a);
 		}
 		
-		if (testList.size() < cargoCap) {
+		if (testList.size() > cargoCap) {
 			check = true;
 		} else {
 			check = false;

@@ -4,7 +4,7 @@ package sMart.Classes;
  * The Item class represents an item object. Containing name, manufacturing cost, sale price, re-order point, re-order amount
  * and in some cases item temperature. 
  * 
- * @author
+ * @author Lara de Maroussem 
  *
  */
 
@@ -50,7 +50,7 @@ public class Item {
 	public Boolean checkTemp(String temp) {
 		this.temp = temp;
 		
-		if (temp == " ") {
+		if (temp == "") {
 			tempControlled = false;
 		} else {
 			tempControlled = true;
