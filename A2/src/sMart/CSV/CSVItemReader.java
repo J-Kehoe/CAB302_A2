@@ -69,7 +69,7 @@ public class CSVItemReader {
 	   * This method is creating a table array, therefore allowing the Item
 	   * object parsed from the CSV file to display in the GUI.
 	   * Array index.
-	   * @param input.
+	   * @param List. This is array list for Item.
 	   * @return The return is the multi dimensional table array.
 	   */
 	
