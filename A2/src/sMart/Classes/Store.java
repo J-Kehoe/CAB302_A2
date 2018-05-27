@@ -1,5 +1,12 @@
 package sMart.Classes;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import sMart.CSV.CSVWriter;
+import sMart.Classes.Item;
+import sMart.Classes.Stock;
+
 /**
  * The Store class represents a store object. It contains Capital, Inventory and Name. 
  * 
@@ -11,8 +18,6 @@ public class Store {
 	
 	private static double capital = 100000;
 	private static Stock inventory;
-	private static Stock cargo;
-	//inventory.items = Food;
 	
 	private String name;
 	
@@ -29,14 +34,16 @@ public class Store {
 		
 	}
 	
-	public Stock inventory (Stock inventory) {
-		this.inventory = inventory;
+	public static void setCapital (double newCapital) {
+		capital = newCapital;
+	}
+	
+	public static Stock getInventory () {
 		return inventory; 
 	}
 	
-	public Stock cargo (Stock cargo) {
-		this.cargo = cargo;
-		return cargo; 
+	public static void setInventory (Stock input) {
+		inventory = input;
 	}
 	
 	public String name (String name) {
@@ -44,19 +51,30 @@ public class Store {
 		return name; 
 	}
 	
-	public static String GenerateManifest() {
-		String manifest = "";
-		String r_string = "";
-		String o_string = "";
+	public static List<Item> GenerateManifest() {
+		List<Item> manifest = new ArrayList<Item>();
+		CSVWriter writer = new CSVWriter();
 		for (int i = 0; i < inventory.size(); i++) {
 			if (inventory.get(i).quantity < inventory.get(i).reorder) {
 				//if temp controlled add name and reorder amount to r_string
 				//else add name and reorder amount to o_string
+				manifest.add(inventory.get(i));
 			}
 		}
-		manifest = ">Refrigerated,\n" + r_string + ",>Ordinary,\n" + o_string;
-		
 		return manifest;
+	}
+	
+	public static Stock ReadManifest(Object[][] manifest) {
+		Stock man_stock = new Stock(new Item[inventory.size()]);
+		for (int i = 0; i < manifest.length; i++) {
+			for (int j = 0; j < inventory.size(); j++) {
+				if (manifest[i][0] == inventory.get(j).name) {
+					man_stock.add(inventory.get(j));
+				}
+			}
+		}
+		
+		return man_stock;
 	}
 	
 	private void inputSales(Object[][] saleslog) {
