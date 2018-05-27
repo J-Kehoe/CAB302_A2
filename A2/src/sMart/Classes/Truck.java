@@ -20,8 +20,6 @@ public abstract class Truck {
 	   * This method returns the calculated cost of truck. The
 	   * full functionality of this class is implemented in both
 	   * Refrigerated and Ordinary truck.
-	   * @param double variable. This represents two seperate 
-	   * values each truck subclass needs to call.
 	   * @return cost.
 	   */
 	
@@ -34,7 +32,7 @@ public abstract class Truck {
 	/**
 	   * This method adds an Item to the truck cargo, cargo is 
 	   * represented in a List format. 
-	   * @param Item a, the item to be added to the cargo.
+	   * @param a.
 	   * @return Cargo. Returns truck cargo.
 	   */
 	
@@ -49,7 +47,7 @@ public abstract class Truck {
 	
 	/**
 	   * This method returns a boolean and checks if truck is full.
-	   * @param List cargo.
+	   * @param cargo.
 	   * @return checkFull, boolean to check if truck is full.
 	   */
 	

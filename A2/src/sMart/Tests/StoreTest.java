@@ -1,11 +1,18 @@
 package sMart.Tests;
-import static org.junit.Assert.*;
 
 import org.junit.Test;
 
 import sMart.Classes.Item;
 import sMart.Classes.Stock;
 import sMart.Classes.Store;
+
+/**
+ * Test case for the class Store. 
+ * 
+ * @author Lara de Maroussem
+ *
+ */
+
 
 public class StoreTest {
 	

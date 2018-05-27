@@ -16,7 +16,7 @@ public class OrdinaryTruck extends Truck{
 	
 	/**
 	   * The OrdinaryTruck object. 
-	   * @param List. cargo. The cargo of OrdinaryTruck. 
+	   * @param cargo.
 	   */
 	
 	public OrdinaryTruck(List<Item> cargo) {
@@ -28,7 +28,7 @@ public class OrdinaryTruck extends Truck{
 	/**
 	   * Inherited from Truck, this method calculates the cost of 
 	   * an OrdinaryTruck based on the variable cargo quantity.
-	   * @param double variable. Checks cost based on cargo quantity.
+	   * @param cargo.
 	   * @return cost. Returns cost of OrdinaryTruck.
 	   */
 	
@@ -46,8 +46,9 @@ public class OrdinaryTruck extends Truck{
 	/**
 	   * Inherited from Truck, this method adds an Item to 
 	   * OrdinaryTruck cargo if item is not temperature controlled.
-	   * @param Item a. Method uses getTemp() and checkTemp() from
-	   * the Item class to check if item a is temperature controlled. 
+	   * Method uses getTemp() and checkTemp() from the Item class to 
+	   * check if item a is temperature controlled.
+	   * @param a.  
 	   * @return Cargo. 
 	   */
 	
@@ -68,7 +69,7 @@ public class OrdinaryTruck extends Truck{
 	   * Inherited from Truck, this method returns a boolean value to
 	   * check if OrdinaryTruck is full. OrdinaryTruck's capacity is 
 	   * 1000.
-	   * @param List cargo. OrdinaryTruck's cargo.
+	   * @param cargo.
 	   * @return checkFull. Return boolean checkFull value.
 	   */
 	
