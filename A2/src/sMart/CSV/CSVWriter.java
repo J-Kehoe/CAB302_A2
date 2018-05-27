@@ -2,39 +2,44 @@ package sMart.CSV;
 
 
 import java.io.FileWriter;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.io.IOException;
+import java.util.List;
 
-/**
- * 
- * @author
- *
- */
+import sMart.Classes.Item;
+
+
 
 public class CSVWriter {
 	
-/*---------------------------------------------------------------*/	
-	
-	/**
-	   * 
-	   * @param 
-	   */
-	
-	
-	public static void generateCSVFile(String fileName) {
+	public static void generateCSVFile(String fileName, List<Item> data) {
 		
 		FileWriter writer = null;
 		
 		try {
-			writer = new FileWriter(fileName);
-			writer.append("Truck"); //insert manifest.truck etc.
-			writer.append("\n");
-	        writer.append("Item"); //insert manifest.item etc.
-	        writer.append(",");
-	        	writer.append("Order"); //insert manifest.order etc.
-	            	
-	            	//might need a for loop to iterate through all the items
+				writer = new FileWriter(fileName);
+				writer.append("Refrigerated"); //insert manifest.truck etc.
+            	writer.append("\n");
+            	
+            	for (int i = 0; i < data.size(); i++) {
+            		if (data.get(i).checkTemp(data.get(i).temp) == true) {
+            			writer.append(data.get(i).name); //insert manifest.item etc.
+                    	writer.append(",");
+                    	writer.append(Integer.toString(data.get(i).reAmount)); //insert manifest.order etc.
+                    	writer.append("\n");
+            		}
+            	}
+            	
+            	writer.append("Ordinary");
+            	writer.append("\n");
+            	
+            	for (int i = 0; i < data.size(); i++) {
+            		if (data.get(i).checkTemp(data.get(i).temp) == false) {
+            			writer.append(data.get(i).name); //insert manifest.item etc.
+                    	writer.append(",");
+                    	writer.append(Integer.toString(data.get(i).reAmount)); //insert manifest.order etc.
+                    	writer.append("\n");
+            		}
+            	}
 				
 			} catch (IOException e) {
 				e.printStackTrace();
@@ -48,17 +53,11 @@ public class CSVWriter {
 			}
 	}
 
-/*---------------------------------------------------------------*/	
-	
-	/**
-	   * 
-	   * @param 
-	   */
 	
 	public static void main(String[] args) throws IOException{
 		
-		String location = "E:\\newManifest.csv";
-		generateCSVFile(location);
+		String location = "C:\\Users\\jkkeh\\Downloads";
+		//generateCSVFile(location);
 		
 	}
 }
