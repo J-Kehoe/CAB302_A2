@@ -23,14 +23,9 @@ public class Item {
 	
 	/**
 	   * Public Item creates an object Item.
+	   * @param String name, int quantity, double mCost, 
+	   * double sPrice, int reorder, int reAmount, String temp 
 	   * These parameters are the variables of the Item object.
-	   * @param name.
-	   * @param quantity.
-	   * @param mCost.
-	   * @param sPrice.
-	   * @param reorder.
-	   * @param reAmount.
-	   * @param temp.
 	   */
 	
 	public Item (String name, int quantity, double mCost, double sPrice, int reorder, int reAmount, String temp) {
@@ -49,7 +44,6 @@ public class Item {
 	
 	/**
 	   * This method checks if an item is refrigerated or ordinary.
-	   * @param temp.
 	   * @return Returns temperature value;
 	   */
 	

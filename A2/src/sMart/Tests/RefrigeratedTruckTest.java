@@ -50,7 +50,7 @@ public class RefrigeratedTruckTest {
 	   * This method is used to test the addCargo() function in the  
 	   * RefrigeratedTruck class. In the RefrigeratedTruck class this method 
 	   * is of List type, with a parameter of an Item a and 
-	   * a return value of List.
+	   * a return value of List<>.
 	   */
 		
 	@Test

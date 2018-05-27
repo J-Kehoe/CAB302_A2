@@ -25,8 +25,6 @@ public class Store {
 	
 	private Store() {}
 	
-/*---------------------------------------------------------------*/	
-	
 	public static Store getInstance() {
 		return instance;
 	}
@@ -35,7 +33,7 @@ public class Store {
 		return capital;
 		
 	}
-
+	
 	public static void setCapital (double newCapital) {
 		capital = newCapital;
 	}
@@ -53,14 +51,6 @@ public class Store {
 		return name; 
 	}
 	
-/*---------------------------------------------------------------*/	
-	
-	/**
-	 * This method generates a manifest, calling a CSV writer and using set
-	 * and get methods. 
-	 *@return Returns manifest as an array list. 
-	 */
-	
 	public static List<Item> GenerateManifest() {
 		List<Item> manifest = new ArrayList<Item>();
 		CSVWriter writer = new CSVWriter();
@@ -74,15 +64,6 @@ public class Store {
 		return manifest;
 	}
 	
-/*---------------------------------------------------------------*/	
-	
-	/**
-	 * This method reads a manifest, creating a new stock object
-	 * and iterating through the manifest array. 
-	 * @param manifest.
-	 * @return Returns a stock object.
-	 */
-		
 	public static Stock ReadManifest(Object[][] manifest) {
 		Stock man_stock = new Stock(new Item[inventory.size()]);
 		for (int i = 0; i < manifest.length; i++) {
@@ -96,14 +77,6 @@ public class Store {
 		return man_stock;
 	}
 	
-/*---------------------------------------------------------------*/	
-	
-	/**
-	 * This method takes the generated manifest and updates the store inventory. 
-	 * @param items.
-	 * @param plusminus.
-	 */
-			
 	public static void UpdateInventory(Object[][] items, Boolean plusminus) {
 		//This will run after a manifest is ordered
 		//capital- , inventory+
@@ -117,14 +90,7 @@ public class Store {
 			}
 		}
 	}
-	
-/*---------------------------------------------------------------*/	
-	
-	/**
-	 * This method takes a generate inventory and converts it to an array.
-	 * @return The new inventory array.
-	 */
-		
+
 	public static Object[][] InventorytoArray() {
 		Object[][] inv_array = new Object[inventory.size()][7];
 		for (int i = 0; i < inventory.size(); i++) {
