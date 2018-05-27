@@ -19,7 +19,7 @@ public class Stock extends AbstractList<Item> {
 	
 	/**
 	   * Public Stock creates an object Stock.
-	   * @param array.
+	   * @param Item[] array. This represents a collection of items.
 	   */
 	
 	public Stock(Item[] array) {
@@ -31,7 +31,7 @@ public class Stock extends AbstractList<Item> {
 	
 	/**
 	   * This method gets the index of an item.
-	   * @param index.
+	   * @param int index. Represents the index of an Item.
 	   * @return Returns the index of Item a.
 	   */
 	
@@ -44,7 +44,8 @@ public class Stock extends AbstractList<Item> {
 	
 	/**
 	   * This method sets a new value to an index of a collection of Items.
-	   * @param index.
+	   * @param int index. Represents the index of an Item and Item element,
+	   * represents new value.
 	   * @return Returns the variable oldValue.
 	   */
 		
@@ -72,7 +73,6 @@ public class Stock extends AbstractList<Item> {
 	/**
 	   * This method adds an Item to a List of type Item. This
 	   * represents the Stock class. 
-	   * @param a.
 	   * @return Returns the List asList.
 	   */
 	

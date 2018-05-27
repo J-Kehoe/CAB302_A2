@@ -14,8 +14,8 @@ public class Manifest {
 /*---------------------------------------------------------------*/	
 	
 	/**
-	   * This method has not been implemented. 
-	   * @param manifest.
+	   * 
+	   * @param 
 	   */
 	
 	public Manifest (Object [][] manifest) {
@@ -25,8 +25,8 @@ public class Manifest {
 /*---------------------------------------------------------------*/	
 	
 	/**
-	   * This method has not been implemented. 
-	   * @return Total cost.
+	   * 
+	   * @param 
 	   */
 	
 	public double AssignTrucks() {
@@ -102,7 +102,8 @@ public class Manifest {
 /*---------------------------------------------------------------*/	
 	
 	/**
-	   * This method has not been implemented. 
+	   * 
+	   * @param 
 	   */
 	
 	public void ExportManifest() {

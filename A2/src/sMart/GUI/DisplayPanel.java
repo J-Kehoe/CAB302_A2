@@ -12,7 +12,7 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
-import sMart.CSV.CSVItemReader;
+import sMart.CSV.CSVReaderItem;
 import sMart.Classes.Store;
 
 /**
@@ -24,7 +24,7 @@ import sMart.Classes.Store;
 
 public class DisplayPanel extends JPanel {
 	
-	CSVItemReader propertiesData = new CSVItemReader();
+	CSVReaderItem propertiesData = new CSVReaderItem();
 	
 	private static final long serialVersionUID = 1L;
 	String test = "test";
