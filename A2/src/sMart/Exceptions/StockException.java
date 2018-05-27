@@ -2,6 +2,14 @@ package sMart.Exceptions;
 
 import java.io.IOException;
 
+/**
+ * The CSVFormatException class extends IOException. It checks if a stock is being generated in the correct format.
+ * 
+ * @author Lara de Maroussem
+ *
+ */
+
+
 public class StockException extends IOException {
 	
 	StockException() { 

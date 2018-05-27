@@ -16,7 +16,7 @@ public class OrdinaryTruck extends Truck{
 	
 	/**
 	   * The OrdinaryTruck object. 
-	   * @param List<Items> cargo. The cargo of OrdinaryTruck. 
+	   * @param List. cargo. The cargo of OrdinaryTruck. 
 	   */
 	
 	public OrdinaryTruck(List<Item> cargo) {
@@ -68,7 +68,7 @@ public class OrdinaryTruck extends Truck{
 	   * Inherited from Truck, this method returns a boolean value to
 	   * check if OrdinaryTruck is full. OrdinaryTruck's capacity is 
 	   * 1000.
-	   * @param List<Item> cargo. OrdinaryTruck's cargo.
+	   * @param List cargo. OrdinaryTruck's cargo.
 	   * @return checkFull. Return boolean checkFull value.
 	   */
 	

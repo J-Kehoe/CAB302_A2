@@ -4,7 +4,7 @@ package sMart.Exceptions;
  * The CSVFormatException class extends IllegalArgumentException. It checks if a csv file being parsed is in the
  * correct format.
  * 
- * @author
+ * @author Lara de Maroussem
  *
  */
 

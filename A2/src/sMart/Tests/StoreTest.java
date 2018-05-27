@@ -15,8 +15,24 @@ public class StoreTest {
 	
 	Item [] testArray = new Item[3];
 	
+	public static Store getInstance() {
+		return null;
+	}
+	
+	
+	
+	double captial = 10000;
+	
 	@Test
-	public void testInventory() {
+	public void testGetSet() {
+		
+		//store = Store.getInstance();
+		
+		//asssertEquals(captial, );
+	}
+	
+	@Test
+	public void testGenerateManifest() {
 		testArray[0] = item1;
 		testArray[1] = item2;
 		testArray[3] = item3;

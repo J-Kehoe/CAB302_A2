@@ -30,7 +30,7 @@ public class OrdinaryTruckTest {
 	/**
 	   * This method is used to test the calculateCost() function in 
 	   * the OrdinaryTruck class. In the OrdinaryTruck class this 
-	   * method is of type double, with a parameter of List<Item> cargo.
+	   * method is of type double, with a parameter of List cargo.
 	   */
 		
 	@Test
@@ -48,7 +48,7 @@ public class OrdinaryTruckTest {
 	/**
 	   * This method is used to test the addCargo() function in the  
 	   * OrdinaryTruck class. In the OrdinaryTruck class this method 
-	   * is of List<Item> type, with a parameter of an Item a and 
+	   * is of List type, with a parameter of an Item a and 
 	   * a return value of List<>.
 	   */
 		
@@ -68,9 +68,9 @@ public class OrdinaryTruckTest {
 	/**
 	   * This method is used to test the checkFull() function in the  
 	   * OrdinaryTruck class. In the OrdinaryTruck class this method 
-	   * is of type boolean, with a parameter of List<item> cargo and 
+	   * is of type boolean, with a parameter of List cargo and 
 	   * a return value of a boolean. This test checks for a true 
-	   * boolean value; if the size of List<item> cargo exceeds the
+	   * boolean value; if the size of List cargo exceeds the
 	   * cargo capacity.
 	   */
 		
@@ -97,9 +97,9 @@ public class OrdinaryTruckTest {
 	/**
 	   * This method is used to test the checkFull() function in the  
 	   * OrdinaryTruck class. In the OrdinaryTruck class this method 
-	   * is of type boolean, with a parameter of List<item> cargo and 
+	   * is of type boolean, with a parameter of List cargo and 
 	   * a return value of a boolean. This test checks for a false
-	   * boolean value; if the size of List<item> cargo doesn't reach 
+	   * boolean value; if the size of List cargo doesn't reach 
 	   * the cargo capacity.
 	   */
 		

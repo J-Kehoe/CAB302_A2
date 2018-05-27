@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry excluding="sMart/Super_Mart/src/" kind="src" path=""/>
+	<classpathentry kind="src" path="sMart/Super_Mart/src"/>
+	<classpathentry kind="output" path="sMart/Super_Mart/bin"/>
+</classpath>

@@ -71,7 +71,7 @@ public class Stock extends AbstractList<Item> {
 /*---------------------------------------------------------------*/	
 	
 	/**
-	   * This method adds an Item to a List of type List<Items>. This
+	   * This method adds an Item to a List of type Item. This
 	   * represents the Stock class. 
 	   * @return Returns the List asList.
 	   */

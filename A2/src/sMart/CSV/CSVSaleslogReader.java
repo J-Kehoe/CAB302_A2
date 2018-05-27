@@ -39,7 +39,7 @@ public class CSVSaleslogReader {
     	   * fileName as a parameter and using BufferedReader it converts each line into an 
     	   * Array index.
     	   * @param fileName This is the file that will be converted into an Object.
-    	   * @return List<Object> The return is of the new Object ArrayList.
+    	   * @return List. The return is of the new Object ArrayList.
     	   */
 	
     	public static List<Object[]> salesCSV(String fileName){
@@ -79,8 +79,8 @@ public class CSVSaleslogReader {
 		
 		
 		for (int i = 0; i < Store.getInventory().size(); i++) {
-			if (Store.getInventory().get(i).name.equals(name)) {
-				numSold = Store.getInventory().get(i).quantity - Integer.parseInt(data[1]);
+			if (Store.getInventory().get(i).getName().equals(name)) {
+				numSold = Store.getInventory().get(i).getQuantity() - Integer.parseInt(data[1]);
 			}
 		}
 		

@@ -21,10 +21,10 @@ public class CSVWriter {
             	writer.append("\n");
             	
             	for (int i = 0; i < data.size(); i++) {
-            		if (data.get(i).checkTemp(data.get(i).temp) == true) {
-            			writer.append(data.get(i).name); //insert manifest.item etc.
+            		if (data.get(i).checkTemp(data.get(i).getTemp()) == true) {
+            			writer.append(data.get(i).getName()); //insert manifest.item etc.
                     	writer.append(",");
-                    	writer.append(Integer.toString(data.get(i).reAmount)); //insert manifest.order etc.
+                    	writer.append(Integer.toString(data.get(i).getReAmount())); //insert manifest.order etc.
                     	writer.append("\n");
             		}
             	}
@@ -33,10 +33,10 @@ public class CSVWriter {
             	writer.append("\n");
             	
             	for (int i = 0; i < data.size(); i++) {
-            		if (data.get(i).checkTemp(data.get(i).temp) == false) {
-            			writer.append(data.get(i).name); //insert manifest.item etc.
+            		if (data.get(i).checkTemp(data.get(i).getTemp()) == false) {
+            			writer.append(data.get(i).getName()); //insert manifest.item etc.
                     	writer.append(",");
-                    	writer.append(Integer.toString(data.get(i).reAmount)); //insert manifest.order etc.
+                    	writer.append(Integer.toString(data.get(i).getReAmount())); //insert manifest.order etc.
                     	writer.append("\n");
             		}
             	}

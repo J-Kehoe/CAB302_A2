@@ -29,7 +29,7 @@ public class CSVItemReader {
 	   * fileName as a parameter and using BufferedReader it converts each line into an 
 	   * Array index.
 	   * @param fileName This is the file that will be converted into an Item object.
-	   * @return List<Item> The return is of the new Item ArrayList.
+	   * @return List. The return is of the new Item ArrayList.
 	   */
 
 	public static List<Item> itemCSV(String fileName){
@@ -69,8 +69,8 @@ public class CSVItemReader {
 	   * This method is creating a table array, therefore allowing the Item
 	   * object parsed from the CSV file to display in the GUI.
 	   * Array index.
-	   * @param List<Item> This is array list for Item.
-	   * @return Object [] [] The return is the multi dimensional table array.
+	   * @param List. This is array list for Item.
+	   * @return The return is the multi dimensional table array.
 	   */
 	
 	public Object[][] TableData(List<Item> input) {

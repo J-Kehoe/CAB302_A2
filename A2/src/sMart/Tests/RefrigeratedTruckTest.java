@@ -49,7 +49,7 @@ public class RefrigeratedTruckTest {
 	/**
 	   * This method is used to test the addCargo() function in the  
 	   * RefrigeratedTruck class. In the RefrigeratedTruck class this method 
-	   * is of List<Item> type, with a parameter of an Item a and 
+	   * is of List type, with a parameter of an Item a and 
 	   * a return value of List<>.
 	   */
 		
@@ -69,9 +69,9 @@ public class RefrigeratedTruckTest {
 	/**
 	   * This method is used to test the checkFull() function in the  
 	   * RefrigeratedTruck class. In the RefrigeratedTruck class this
-	   * method is of type boolean, with a parameter of List<item> 
+	   * method is of type boolean, with a parameter of List
 	   * cargo and a return value of a boolean. This test checks for a true 
-	   * boolean value; if the size of List<item> cargo exceeds the
+	   * boolean value; if the size of List cargo exceeds the
 	   * cargo capacity.
 	   */
 		
@@ -98,9 +98,9 @@ public class RefrigeratedTruckTest {
 	/**
 	   * This method is used to test the checkFull() function in the  
 	   * RefrigeratedTruck class. In the RefrigeratedTruck class this method 
-	   * is of type boolean, with a parameter of List<item> cargo and 
+	   * is of type boolean, with a parameter of List cargo and 
 	   * a return value of a boolean. This test checks for a false
-	   * boolean value; if the size of List<item> cargo doesn't reach 
+	   * boolean value; if the size of List cargo doesn't reach 
 	   * the cargo capacity.
 	   */
 		

@@ -17,7 +17,7 @@ public class RefrigeratedTruck extends Truck {
 	
 	/**
 	   * The RefrigeratedTruck object.
-	   * @param List<Items> cargo. The cargo of RefrigeratedTruck. 
+	   * @param List cargo. The cargo of RefrigeratedTruck. 
 	   */
 	
 	public RefrigeratedTruck(List<Item> cargo) {}
@@ -67,7 +67,7 @@ public class RefrigeratedTruck extends Truck {
 	   * Inherited from Truck, this method returns a boolean value to
 	   * check if RefrigeratedTruck is full. OrdinaryTruck's capacity 
 	   * is 1000.
-	   * @param List<Item> cargo. OrdinaryTruck's cargo.
+	   * @param List cargo. OrdinaryTruck's cargo.
 	   * @return checkFull. Return boolean checkFull value.
 	   */
 	
