@@ -49,7 +49,7 @@ public class OrdinaryTruckTest {
 	   * This method is used to test the addCargo() function in the  
 	   * OrdinaryTruck class. In the OrdinaryTruck class this method 
 	   * is of List type, with a parameter of an Item a and 
-	   * a return value of List<>.
+	   * a return value of List.
 	   */
 		
 	@Test
