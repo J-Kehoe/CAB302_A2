@@ -10,7 +10,7 @@ import sMart.Classes.Item;
 import sMart.Classes.RefrigeratedTruck;
 
 /**
- * Test case for the class Stock. 
+ * Test case for the class RefridgeratedTruck. 
  * 
  * @author James Kehoe
  *

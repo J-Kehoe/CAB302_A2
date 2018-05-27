@@ -73,7 +73,7 @@ public class RefrigeratedTruck extends Truck {
 	
 	public Boolean checkFull (List<Item> cargo) {
 		Boolean checkFull = null;
-		double cargoCapacity = 800;
+		cargoCapacity = 800;
 		
 		if (cargo.size() > cargoCapacity) {
 			checkFull = true;

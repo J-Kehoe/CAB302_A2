@@ -74,7 +74,7 @@ public class OrdinaryTruck extends Truck{
 	
 	public Boolean checkFull (List<Item> cargo) {
 		boolean checkFull;
-		double cargoCapacity = 1000;
+		cargoCapacity = 1000;
 		
 		if (cargo.size() < cargoCapacity) {
 			checkFull = true;

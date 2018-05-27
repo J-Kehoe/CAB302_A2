@@ -10,7 +10,7 @@ import sMart.Classes.Item;
 import sMart.Classes.OrdinaryTruck;
 
 /**
- * Test case for the class Stock. 
+ * Test case for the class OrdinaryTruck. 
  * 
  * @author James Kehoe
  *

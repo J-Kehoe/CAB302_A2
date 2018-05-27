@@ -10,7 +10,7 @@ import sMart.Classes.Stock;
 /**
  * The Store class represents a store object. It contains Capital, Inventory and Name. 
  * 
- * @author
+ * @author James Kehoe
  *
  */
 
