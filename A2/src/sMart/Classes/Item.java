@@ -10,14 +10,14 @@ package sMart.Classes;
 
 public class Item {
 	
-	String name;
-	int quantity;
-	double mCost;
-	double sPrice;
-	int reorder;
-	int reAmount;
-	String temp; 
-	boolean tempControlled;
+	public String name;
+	public int quantity;
+	public double mCost;
+	public double sPrice;
+	public int reorder;
+	public int reAmount;
+	public String temp; 
+	public boolean tempControlled;
 
 /*---------------------------------------------------------------*/	
 	

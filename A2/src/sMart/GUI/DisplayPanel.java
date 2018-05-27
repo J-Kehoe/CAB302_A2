@@ -11,9 +11,8 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableColumn;
 
-import sMart.CSV.CSVItemReader;
+import sMart.CSV.CSVReaderItem;
 import sMart.Classes.Store;
 
 /**
@@ -96,7 +95,6 @@ public class DisplayPanel extends JPanel {
 	}
 	
 	public void setTableContents(Object[][] contents) {
-		CSVReaderItem converter = new CSVReaderItem();
 		DefaultTableModel model = (DefaultTableModel) inventoryTable.getModel();
 		int rows = model.getRowCount();
 		if (rows != 24) { 

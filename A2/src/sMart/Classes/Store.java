@@ -5,7 +5,7 @@ import java.util.List;
 
 import sMart.CSV.CSVWriter;
 import sMart.Classes.Item;
-import sMart.Classes.Stock
+import sMart.Classes.Stock;
 
 /**
  * The Store class represents a store object. It contains Capital, Inventory and Name. 

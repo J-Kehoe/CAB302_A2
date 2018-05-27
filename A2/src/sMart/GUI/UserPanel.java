@@ -14,9 +14,12 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.event.EventListenerList;
 
-import sMart.CSV.CSVItemReader;
-
+import sMart.CSV.CSVManifestReader;
+import sMart.CSV.CSVReaderItem;
+import sMart.CSV.CSVSaleslogReader;
+import sMart.CSV.CSVWriter;
 import sMart.Classes.Item;
+import sMart.Classes.Store;
 import sMart.Exceptions.CSVFormatException;
 
 /**
