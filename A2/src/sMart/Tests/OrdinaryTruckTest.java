@@ -30,8 +30,7 @@ public class OrdinaryTruckTest {
 	/**
 	   * This method is used to test the calculateCost() function in 
 	   * the OrdinaryTruck class. In the OrdinaryTruck class this 
-	   * method is of type double, with a parameter of variable and a
-	   * return of cost.
+	   * method is of type double, with a parameter of List<Item> cargo.
 	   */
 		
 	@Test
@@ -41,7 +40,7 @@ public class OrdinaryTruckTest {
 		double q = testList.size();
 		double cost = 750 + (0.25 * q);
 		
-		assertEquals(cost,test.calculateCost(3000), 10);
+		assertEquals(cost,test.calculateCost(testList), 300);
 	}
 
 /*---------------------------------------------------------------*/
