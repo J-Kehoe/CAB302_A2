@@ -67,8 +67,8 @@ public class CSVSaleslogReader {
     	
  	/**
   	   * This method takes the converted .csv file in the salesCSV method and creates an Object with
-  	   * two indexes.
-  	   * @param String [] data This parameter is referencing the object created in the salesCSV class.
+  	   * two indexes. The parameter is referencing the object created in the salesCSV class.
+  	   * @param data.
   	   * @return Item returns an Item object.
   	   */
     	
@@ -93,8 +93,8 @@ public class CSVSaleslogReader {
 
 	/**
 	   * This method takes the converted .csv file in the salesCSV method and creates an Object with
-	   * two indexes.
-	   * @param String [] data This parameter is referencing the object created in the salesCSV class.
+	   * two indexes. The parameter is referencing the object created in the salesCSV class.
+	   * @param list.
 	   * @return Item returns an Item object.
 	   */
 	
@@ -112,7 +112,8 @@ public class CSVSaleslogReader {
 	
 	/**
 	   * This method takes the createSale method and converts it into a readable string format.
-	   * @param Object entry. This parameter creates an Object referencing the createSale method. 
+	   * The parameter creates an Object referencing the createSale method. 
+	   * @param entry.
 	   * @return String. Returns object in a string format.
 	   */
 			

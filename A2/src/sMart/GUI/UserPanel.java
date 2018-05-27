@@ -14,8 +14,8 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.event.EventListenerList;
 
+import sMart.CSV.CSVItemReader;
 import sMart.CSV.CSVManifestReader;
-import sMart.CSV.CSVReaderItem;
 import sMart.CSV.CSVSaleslogReader;
 import sMart.CSV.CSVWriter;
 import sMart.Classes.Item;
@@ -51,7 +51,7 @@ public class UserPanel extends JPanel {
 				fc.setDialogTitle("Choose Properties File");
 				fc.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
 				if (fc.showOpenDialog(propertiesButton) == JFileChooser.APPROVE_OPTION) {
-					CSVReaderItem propertiesData = new CSVReaderItem();
+					CSVItemReader propertiesData = new CSVItemReader();
 					
 					try {
 					List<Item> p_list = propertiesData.itemCSV(fc.getSelectedFile().getAbsolutePath());

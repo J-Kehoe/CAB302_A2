@@ -17,7 +17,7 @@ public class RefrigeratedTruck extends Truck {
 	
 	/**
 	   * The RefrigeratedTruck object.
-	   * @param List cargo. The cargo of RefrigeratedTruck. 
+	   * @param cargo.
 	   */
 	
 	public RefrigeratedTruck(List<Item> cargo) {}
@@ -27,7 +27,7 @@ public class RefrigeratedTruck extends Truck {
 	/**
 	   * Inherited from Truck, this method calculates the cost of 
 	   * a RefrigeratedTruck based on the variable cargo quantity.
-	   * @param double variable. Checks cost based on cargo quantity.
+	   * @param a;
 	   * @return cost. Returns cost of RefrigeratedTruck.
 	   */
 	
@@ -45,7 +45,7 @@ public class RefrigeratedTruck extends Truck {
 	/**
 	   * Inherited from Truck, this method adds an Item to 
 	   * RefrigeratedTruck cargo if item is not temperature controlled.
-	   * @param Item a. Method uses getTemp() and checkTemp() from
+	   * @param a.
 	   * the Item class to check if item a is temperature controlled. 
 	   * @return Cargo. 
 	   */
@@ -67,7 +67,7 @@ public class RefrigeratedTruck extends Truck {
 	   * Inherited from Truck, this method returns a boolean value to
 	   * check if RefrigeratedTruck is full. OrdinaryTruck's capacity 
 	   * is 1000.
-	   * @param List cargo. OrdinaryTruck's cargo.
+	   * @param cargo.
 	   * @return checkFull. Return boolean checkFull value.
 	   */
 	
